@@ -3,6 +3,6 @@
 	<script src="common-js/tether.min.js"></script>
 	<script src="common-js/bootstrap.js"></script>
 	<script src="common-js/scripts.js"></script>
-	<script src="{{asset('js/app.js')}}"></script>
+	<script src="js/app.js"></script>
 </body>
 </html>
