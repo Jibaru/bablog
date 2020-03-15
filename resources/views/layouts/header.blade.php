@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-	<title>TITLE</title>
+	<title>Blog de Jibaru</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
@@ -14,6 +14,8 @@
 	<link href="common-css/ionicons.css" rel="stylesheet">
 	<link href="layout-1/css/styles.css" rel="stylesheet">
 	<link href="layout-1/css/responsive.css" rel="stylesheet">
-
+	<link href="{{asset('css/app.css')}}" rel="stylesheet">
 </head>
 <body>
+
+
