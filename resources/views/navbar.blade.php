@@ -6,9 +6,15 @@
         <div class="menu-nav-icon" data-nav-menu="#main-menu"><i class="ion-navicon"></i></div>
 
         <ul class="main-menu visible-on-click" id="main-menu">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Categorías</a></li>
-            <li><a href="#">Otros</a></li>
+            <li><a href="/#">Inicio</a></li>
+            <li><a href="/#">Categorías</a>
+                <ul class="submenu">
+                    <li><a href="/#/tecnologia">Tecnología</a></li>
+                    <li><a href="/#/desarrollo">Desarrollo</a></li>
+                    <li><a href="/#/aprendizaje">Aprendizaje</a></li>
+                </ul>
+            </li>
+            <!--<li><a href="#">Otros</a></li>-->
         </ul>
 
         <div class="src-area">
@@ -18,4 +24,6 @@
             </form>
         </div>
     </div>
+
 </header>
+

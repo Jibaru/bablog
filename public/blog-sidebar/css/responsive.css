@@ -3,10 +3,8 @@
 /* Screens Resolution : 992px
 -------------------------------------------------------------------------- */
 @media only screen and (max-width: 1200px) {
-
-    .submenu {
-        max-width: 500px;
-    }
+	
+	
 }
 
 /* Screens Resolution : 992px
@@ -21,6 +19,7 @@
 	h2{ font-size: 3em; }
 	h3{ font-size: 2em; }
 	
+	
 	/* COMMoNS */
 	
 	.no-left-padding{ padding-left: 15px; }
@@ -34,9 +33,19 @@
 
 	header .src-area{ width: 30%; }
 
-    .submenu {
-        max-width: 320px;
-    }
+
+	/* ---------------------------------
+	6. MAIN POST ( LEF AREA )
+	--------------------------------- */
+	
+	.main-post{ border-right: 0px ; }
+	
+	.main-post .blog-post-inner,
+	.main-post .post-icons-area{ padding-right: 0px; }
+	
+	
+	
+
 	
 }
 
@@ -84,10 +93,6 @@
 	/* SEARCH AREA */
 
 	header .src-area{ width: 100%; }
-
-    .submen {
-        max-width: 100%;
-    }
 	
 	
 	/* NAV ICON */
@@ -109,9 +114,6 @@
 	--------------------------------- */
 
 	footer{ padding: 40px 0 0px; margin-top: 0px; }
-	
-	
-	
 
 	
 }
@@ -126,6 +128,19 @@
 
 	body{ font-size: 14px;  }
 	
+	/* ---------------------------------
+	6. MAIN POST ( LEF AREA )
+	--------------------------------- */
+
+	/* ICONS */
+
+	.main-post ul.post-icons,
+	.main-post ul.icons{ float: none; margin-top: 10px; }
+	
+	.main-post ul.post-icons > li > a > i,
+	.main-post ul.icons > li > a > i{ padding: 0; padding-right: 10px; }
+
+
 	
 }
 

@@ -9,8 +9,11 @@
 
                 <div class="blog-info">
 
-                    <h4 class="title"><a href="#"><b>How Did Van Gogh's Turbulent Mind Depict One of the Most Complex
-                    Concepts in Physics?</b></a></h4>
+                    <h4 class="title">
+                        <router-link :to="to">
+                            <b>How Did Van Gogh's Turbulent Mind Depict One of the Most Complex Concepts in Physics?</b>
+                        </router-link>
+                    </h4>
 
                     <ul class="post-footer">
                         <li><a href="#"><i class="ion-heart"></i>57</a></li>
@@ -27,6 +30,12 @@
 <script>
     export default {
         name: 'PostCard',
+        props: {
+            to: {
+                type: String,
+                default: '#'
+            }
+        }
 
     }
 </script>

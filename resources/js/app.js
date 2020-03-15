@@ -1,3 +1,6 @@
+import VueRouter from 'vue-router'
+import routes from './routers/index';
+
 require('./bootstrap');
 window.Vue = require('vue');
 
@@ -6,6 +9,17 @@ Vue.component(
     require('./views/home/AppHome.vue').default
 );
 
-const app = new Vue({
-    el: '#app'
+Vue.component(
+    'nav-bar',
+    require('./components/Navbar.vue').default
+);
+
+Vue.use(VueRouter);
+
+const router = new VueRouter({
+    routes
 });
+
+const app = new Vue({
+    router
+}).$mount('#app');

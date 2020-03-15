@@ -1,11 +1,9 @@
 @include('layouts.header')
 
-@include('navbar')
-
-@include('slider')
-
 <div id="app">
-    <app-home></app-home>
+
+    <nav-bar></nav-bar>
+    <router-view></router-view>
 </div>
 @include('footer')
 
