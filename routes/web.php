@@ -37,7 +37,7 @@ INSERT INTO roles (id, name, permission, created_at, updated_at) values
     DB::insert("
 INSERT INTO `users` (`id`, `name`, `email`, `role_id`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Ignacio Raúl', 'ignacioruedaboada@hotmail.com', 1, NULL, '$2y$10"."$"."WxY22RZzYx1Y91H5ib9CjOJ9A8dNQSVWzYpOqDmoFV1FtzABiJx9a', NULL, '2020-03-19 04:48:01', '2020-03-19 04:48:01'),
-(2, 'Jorge Sánchez', 'jorgesanchez@gmail.com', 2, NULL, '$2y$10"."$"."hs.DFhsLj62Rtu5SGNu5au5/nahpmLXPpf980D6vjrpixRHlFjcw2', NULL, '2020-03-19 04:49:17', '2020-03-19 04:49:17');");
+(2, 'Jorge Sánchez', 'jorgesanchez@gmail.com', 2, NULL, '$2y$10"."$"."hs.DFhsLj62Rtu5SGNu5au5/nahpmLXPpf980D6vjrpixRHlFjcw2', NULL, '2020-03-19 04:49:17', '2020-03-19 04:49:17')");
 
     DB::insert("
     INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
@@ -53,14 +53,14 @@ INSERT INTO `users` (`id`, `name`, `email`, `role_id`, `email_verified_at`, `pas
 (2, 'HOLA', '2020-03-18 00:00:00', 'SIDEBAR', 'TINY', 'Descripción','Esto es una demo de un post.', 1, '2020-03-18 05:00:00', '2020-03-18 05:00:00'),
 (3, 'TÍTULO PRUEBA', '2020-03-18 00:00:00', 'LANDING', 'BIG', 'Descripción','Esto es una demo de un post.', 1, '2020-03-18 05:00:00', '2020-03-18 05:00:00'),
 (4, 'AJÁ', '2020-03-18 00:00:00', 'CENTERED', 'BIG','Descripción', 'Esto es una demo de un post.', 1, '2020-03-18 05:00:00', '2020-03-18 05:00:00'),
-(5, 'BIENVENIDO POR SEGUNDA VEZ', '2020-03-18 00:00:00', 'CENTERED', 'TINY','Descripción', 'Esto es una segunda demo de un post.', 1, '2020-03-18 05:00:00', '2020-03-18 05:00:00');
+(5, 'BIENVENIDO POR SEGUNDA VEZ', '2020-03-18 00:00:00', 'CENTERED', 'TINY','Descripción', 'Esto es una segunda demo de un post.', 1, '2020-03-18 05:00:00', '2020-03-18 05:00:00')
 ");
 
     DB::insert("
     INSERT INTO `comments` (`id`, `content`, `date_time`, `thread`, `user_id`, `post_id`, `created_at`, `updated_at`) VALUES
 (1, 'Esto es un primer comentario.', '2020-03-18 00:00:00', NULL, 1, 1, '2020-03-18 05:00:00', '2020-03-18 05:00:00'),
 (2, 'Esto es un primer reply del primer comentario.', '2020-03-18 00:00:00', 1, 2, 1, '2020-03-18 05:00:00', '2020-03-18 05:00:00'),
-(3, 'Esto es un segundo reply del primer comentario.', '2020-03-18 00:00:00', 1, 1, 1, '2020-03-18 05:00:00', '2020-03-18 05:00:00');
+(3, 'Esto es un segundo reply del primer comentario.', '2020-03-18 00:00:00', 1, 1, 1, '2020-03-18 05:00:00', '2020-03-18 05:00:00')
 ");
 
     DB::insert("
