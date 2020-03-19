@@ -28,7 +28,7 @@
         <entry file="file://$PROJECT_DIR$/app/Console/Commands/ImportDataSql.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
-              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+              <caret line="40" column="51" selection-start-line="40" selection-start-column="51" selection-end-line="40" selection-end-column="51" />
               <folding>
                 <element signature="e#40#71#0#PHP" expanded="true" />
               </folding>
@@ -223,10 +223,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="19" />
-    <option name="y" value="20" />
-    <option name="width" value="1346" />
-    <option name="height" value="698" />
+    <option name="x" value="573" />
+    <option name="y" value="147" />
+    <option name="width" value="766" />
+    <option name="height" value="712" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -257,11 +257,6 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Console" type="462c0819:PsiDirectoryNode" />
               <item name="Commands" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sistemas-archivos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sistemas-archivos" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sistemas-archivos" type="b2602c69:ProjectViewProjectNode" />
@@ -405,7 +400,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1584639039393" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1584639329945" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/SERVICIOS_OVERSKULL" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -447,12 +442,12 @@
       <workItem from="1584299565513" duration="2494000" />
       <workItem from="1584311468984" duration="885000" />
       <workItem from="1584570717688" duration="17440000" />
-      <workItem from="1584627196300" duration="11881000" />
+      <workItem from="1584627196300" duration="12155000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41403000" />
+    <option name="totallyTimeSpent" value="41677000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -467,7 +462,7 @@
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26399395" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26399395" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -482,7 +477,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32850242" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.4299517" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.4299517" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3510467" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
@@ -888,7 +883,7 @@
     <entry file="file://$PROJECT_DIR$/app/Console/Commands/ImportDataSql.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+          <caret line="40" column="51" selection-start-line="40" selection-start-column="51" selection-end-line="40" selection-end-column="51" />
           <folding>
             <element signature="e#40#71#0#PHP" expanded="true" />
           </folding>
