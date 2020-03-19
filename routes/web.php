@@ -78,7 +78,7 @@ Route::get('/insert-all', function(){
 
     DB::insert("
     INSERT INTO files (id, name, format, path, type, created_at, updated_at) VALUES
-(1, 'VALLE', 'PNG', '/storage/images/image_1.jpg', 'IMAGEN', '2020-03-18 05:00:00', '2020-03-18 05:00:00')
+(1, 'VALLE', 'PNG', '/files/images/image_1.jpg', 'IMAGEN', '2020-03-18 05:00:00', '2020-03-18 05:00:00')
     ");
 
     DB::insert("
