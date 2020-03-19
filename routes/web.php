@@ -27,8 +27,8 @@ Route::resource('/categories', 'CategoryController');
 Route::resource('/posts', 'PostController');
 Route::get('/front-posts', 'PostController@front');
 Route::resource('/comments', 'CommentController');
-Route::get('/storage/{folder}/{filename}', 'FileController@viewFile');
-Route::get('/insert1', function(){
+
+Route::get('/insert-all', function(){
     DB::insert("
     INSERT INTO roles (id, name, permission, created_at, updated_at) values 
     (1, 'ADMINISTRADOR', 777, '2020-03-18 05:00:00', '2020-03-18 05:00:00'),
@@ -39,9 +39,6 @@ Route::get('/insert1', function(){
     (1, 'Ignacio Raúl', 'ignacioruedaboada@hotmail.com', 1, NULL, '$2y$10"."$"."WxY22RZzYx1Y91H5ib9CjOJ9A8dNQSVWzYpOqDmoFV1FtzABiJx9a', NULL, '2020-03-19 04:48:01', '2020-03-19 04:48:01'),
     (2, 'Jorge Sánchez', 'jorgesanchez@gmail.com', 2, NULL, '$2y$10"."$"."hs.DFhsLj62Rtu5SGNu5au5/nahpmLXPpf980D6vjrpixRHlFjcw2', NULL, '2020-03-19 04:49:17', '2020-03-19 04:49:17')");
     
-});
-Route::get('/insert2', function(){
-
     DB::insert("
     INSERT INTO categories (id, name, created_at, updated_at) VALUES
 (1, 'TECNOLOGÍA', '2020-03-18 05:00:00', '2020-03-18 05:00:00'),
