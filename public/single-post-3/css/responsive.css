@@ -33,17 +33,14 @@
 
 	header .src-area{ width: 30%; }
 
-
+	
 	/* ---------------------------------
-	6. MAIN POST ( LEF AREA )
+	6. MAIN POST
 	--------------------------------- */
-	
-	.main-post-sidebar{ border-right: 0px ; }
-	
-	.main-post-sidebar .blog-post-inner,
-	.main-post-sidebar .post-icons-area{ padding-right: 0px; }
-	
-	
+
+	.main-post-landing .post-top-area,
+	.main-post-landing .post-bottom-area{ margin: 0 0px; }
+
 	/* ---------------------------------
 	7. SIDEBAR AREA
 	--------------------------------- */
@@ -108,6 +105,13 @@
 	
 	
 	/* ---------------------------------
+	4. SLIDER
+	--------------------------------- */
+
+	.slider-landing{ height: 400px; }
+
+
+	/* ---------------------------------
 	10. FOOTER
 	--------------------------------- */
 
@@ -132,11 +136,11 @@
 
 	/* ICONS */
 
-	.main-post-sidebar ul.post-icons,
-	.main-post-sidebar ul.icons{ float: none; margin-top: 10px; }
+	.main-post-landing ul.post-icons,
+	.main-post-landing ul.icons{ float: none; margin-top: 10px; }
 	
-	.main-post-sidebar ul.post-icons > li > a > i,
-	.main-post-sidebar ul.icons > li > a > i{ padding: 0; padding-right: 10px; }
+	.main-post-landing ul.post-icons > li > a > i,
+	.main-post-landing ul.icons > li > a > i{ padding: 0; padding-right: 10px; }
 
 
 	

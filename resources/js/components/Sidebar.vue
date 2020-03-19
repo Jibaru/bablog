@@ -1,7 +1,7 @@
 <template>
 
     <div>
-        <div class="single-post info-area ">
+        <div class="single-post info-area">
 
             <div class="about-area">
                 <h4 class="title"><b>ABOUT BONA</b></h4>
@@ -10,7 +10,7 @@
                     Ut enim ad minim veniam</p>
             </div>
 
-            <div class="subscribe-area">
+            <div :class="{'sidebar-area': true ,'subscribe-area': true, 'pl-0 pr-0': from === 'POST'}">
 
                 <h4 class="title"><b>SUBSCRIBE</b></h4>
                 <div class="input-area">
@@ -20,9 +20,9 @@
                     </form>
                 </div>
 
-            </div><!-- subscribe-area -->
+            </div>
 
-            <div class="tag-area">
+            <div :class="{'tag-area': true , 'pl-0 pr-0': from === 'POST'}">
 
                 <h4 class="title"><b>TAG CLOUD</b></h4>
                 <ul>
@@ -46,7 +46,12 @@
 <script>
 
     export default {
-
+        props: {
+            from: {
+                type: String,
+                default: 'HOME'
+            }
+        }
     }
 
 </script>

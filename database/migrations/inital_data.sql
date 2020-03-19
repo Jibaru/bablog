@@ -12,9 +12,12 @@ INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
 (3, 'APRENDIZAJE', '2020-03-18 05:00:00', '2020-03-18 05:00:00'),
 (4, 'OTRO', '2020-03-18 05:00:00', '2020-03-18 05:00:00');
 
-INSERT INTO `posts` (`id`, `title`, `date_time`, `type`, `content`, `category_id`, `created_at`, `updated_at`) VALUES
-(1, 'BIENVENIDO A MI WEB', '2020-03-18 00:00:00', 'CENTERED', 'Esto es una demo de un post.', 1, '2020-03-18 05:00:00', '2020-03-18 05:00:00'),
-(2, 'BIENVENIDO POR SEGUNDA VEZ', '2020-03-18 00:00:00', 'CENTERED', 'Esto es una segunda demo de un post.', 1, '2020-03-18 05:00:00', '2020-03-18 05:00:00');
+INSERT INTO `posts` (`id`, `title`, `date_time`, `type`, `card_type`, `description`, `content`, `category_id`, `created_at`, `updated_at`) VALUES
+(1, 'BIENVENIDO A MI WEB', '2020-03-18 00:00:00', 'CENTERED', 'NORMAL', 'Descripción', 'Esto es una demo de un post.', 1, '2020-03-18 05:00:00', '2020-03-18 05:00:00'),
+(2, 'HOLA', '2020-03-18 00:00:00', 'SIDEBAR', 'TINY', 'Descripción','Esto es una demo de un post.', 1, '2020-03-18 05:00:00', '2020-03-18 05:00:00'),
+(3, 'TÍTULO PRUEBA', '2020-03-18 00:00:00', 'LANDING', 'BIG', 'Descripción','Esto es una demo de un post.', 1, '2020-03-18 05:00:00', '2020-03-18 05:00:00'),
+(4, 'AJÁ', '2020-03-18 00:00:00', 'CENTERED', 'BIG','Descripción', 'Esto es una demo de un post.', 1, '2020-03-18 05:00:00', '2020-03-18 05:00:00'),
+(5, 'BIENVENIDO POR SEGUNDA VEZ', '2020-03-18 00:00:00', 'CENTERED', 'TINY','Descripción', 'Esto es una segunda demo de un post.', 1, '2020-03-18 05:00:00', '2020-03-18 05:00:00');
 
 
 INSERT INTO `comments` (`id`, `content`, `date_time`, `thread`, `user_id`, `post_id`, `created_at`, `updated_at`) VALUES
@@ -35,4 +38,7 @@ INSERT INTO `files` (`id`, `name`, `format`, `path`, `type`, `created_at`, `upda
 (1, 'VALLE', 'PNG', 'https://pngimage.net/wp-content/uploads/2018/06/imagenes-de-paisajes-png.png', 'IMAGEN', '2020-03-18 05:00:00', '2020-03-18 05:00:00');
 
 INSERT INTO `posts_images` (`id`, `file_id`, `post_id`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, '2020-03-18 05:00:00', '2020-03-18 05:00:00');
+(1, 1, 1, '2020-03-18 05:00:00', '2020-03-18 05:00:00'),
+(2, 1, 2, '2020-03-18 05:00:00', '2020-03-18 05:00:00'),
+(3, 1, 3, '2020-03-18 05:00:00', '2020-03-18 05:00:00'),
+(4, 1, 4, '2020-03-18 05:00:00', '2020-03-18 05:00:00');

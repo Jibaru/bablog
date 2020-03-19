@@ -46,7 +46,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        return Post::with('category')->get()->find($id);
+        return Post::with(['category', 'comments', 'likes', 'views', 'frontImage'])->get()->find($id);
     }
 
     /**

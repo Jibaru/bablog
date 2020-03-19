@@ -1,44 +1,59 @@
 <template>
     <div>
         <div class="card h-100">
-            <div class="single-post post-style-2">
+            <div v-if="post" class="single-post post-style-2">
 
-                <div class="blog-image"><img src="images/brooke-lark-194251.jpg" alt="Blog Image"></div>
+                <div class="blog-image"><img :src="post.frontImage.file.url" alt="Blog Image"></div>
 
                 <div class="blog-info">
 
-                    <h6 class="pre-title"><a href="#"><b>HEALTH</b></a></h6>
+                    <h6 class="pre-title">
+                        <a href="#">
+                            <b>{{post.category.name}}</b>
+                        </a>
+                    </h6>
 
-                    <h4 class="title"><a href="#"><b>How Did Van Gogh's Turbulent Mind Depict One of the Most Complex
-                        Concepts in Physics?</b></a></h4>
+                    <h4 class="title">
+                        <a href="#">
+                            <b>{{post.title}}</b>
+                        </a>
+                    </h4>
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                        ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                    <p>{{post.description}}</p>
 
                     <div class="avatar-area">
                         <a class="avatar" href="#"><img src="images/icons8-team-355979.jpg" alt="Profile Image"></a>
                         <div class="right-area">
                             <a class="name" href="#"><b>Lora Plamer</b></a>
-                            <h6 class="date" href="#">on Sep 29, 2017 at 9:48am</h6>
+                            <h6 class="date" href="#">{{post.dateTime}}</h6>
                         </div>
                     </div>
 
                     <ul class="post-footer">
-                        <li><a href="#"><i class="ion-heart"></i>57</a></li>
-                        <li><a href="#"><i class="ion-chatbubble"></i>6</a></li>
-                        <li><a href="#"><i class="ion-eye"></i>138</a></li>
+                        <li><a href="#"><i class="ion-heart"></i>{{post.likesCount}}</a></li>
+                        <li><a href="#"><i class="ion-chatbubble"></i>{{post.commentsCount}}</a></li>
+                        <li><a href="#"><i class="ion-eye"></i>{{post.viewsCount}}</a></li>
                     </ul>
 
-                </div><!-- blog-right -->
+                </div>
 
-            </div><!-- single-post extra-blog -->
+            </div>
 
-        </div><!-- card -->
+        </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: 'BigPostCard'
+        name: 'BigPostCard',
+        props: {
+            to: {
+                type: String,
+                default: '#'
+            },
+            post: {
+                type: Object
+            }
+        }
     }
 </script>

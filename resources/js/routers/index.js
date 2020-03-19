@@ -22,7 +22,7 @@ export default [
             },
             {
                 path: '/tecnologia/posts/:id',
-                component: require('../views/posts/AppPost').default,
+                component: require('../views/posts/Post').default,
             }
         ]
     },
@@ -42,7 +42,7 @@ export default [
             },
             {
                 path: '/desarrollo/posts/:id',
-                component: require('../views/posts/AppPost').default,
+                component: require('../views/posts/Post').default,
             }
         ]
     },
@@ -62,12 +62,12 @@ export default [
             },
             {
                 path: '/aprendizaje/posts/:id',
-                component: require('../views/posts/AppPost').default,
+                component: require('../views/posts/Post').default,
             }
         ]
     },
     {
-        path: '/posts',
+        path: '/posts/:id',
         component: require('../views/posts/AppPost').default,
         props: true
     },

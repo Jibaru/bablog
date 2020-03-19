@@ -33,17 +33,14 @@
 
 	header .src-area{ width: 30%; }
 
-
+	
 	/* ---------------------------------
-	6. MAIN POST ( LEF AREA )
+	6. MAIN POST
 	--------------------------------- */
-	
-	.main-post-sidebar{ border-right: 0px ; }
-	
-	.main-post-sidebar .blog-post-inner,
-	.main-post-sidebar .post-icons-area{ padding-right: 0px; }
-	
-	
+
+	.main-post-centered .post-top-area,
+	.main-post-centered .post-bottom-area{ margin: 30px; }
+
 	/* ---------------------------------
 	7. SIDEBAR AREA
 	--------------------------------- */
@@ -73,6 +70,8 @@
 	h4{ font-size: 1.5em; }
 	h5{ font-size: 1.2em; }
 	
+	
+	
 	/* ---------------------------------
 	2. COMMONS FOR PAGE DESIGN
 	--------------------------------- */
@@ -84,8 +83,7 @@
 	/* ---------------------------------
 	3. MENU
 	--------------------------------- */
-	
-	
+
 	header .main-menu{ display: none; float: none; clear: both; border-top: 1px solid #ccc; }
 	
 	header .main-menu > li{ display: block; float: none; border-bottom: 1px solid #ddd; }
@@ -107,6 +105,13 @@
 	.menu-nav-icon{ display: inline-block; }
 	
 	
+	/* ---------------------------------
+	4. SLIDER
+	--------------------------------- */
+
+	.slider-centered{ height: 400px; width: 100%; background-image: url(../../images/category-1.jpg); background-size: cover; }
+
+
 	/* ---------------------------------
 	10. FOOTER
 	--------------------------------- */
@@ -132,11 +137,11 @@
 
 	/* ICONS */
 
-	.main-post-sidebar ul.post-icons,
-	.main-post-sidebar ul.icons{ float: none; margin-top: 10px; }
+	.main-post-centered ul.post-icons,
+	.main-post-centered ul.icons{ float: none; margin-top: 10px; }
 	
-	.main-post-sidebar ul.post-icons > li > a > i,
-	.main-post-sidebar ul.icons > li > a > i{ padding: 0; padding-right: 10px; }
+	.main-post-centered ul.post-icons > li > a > i,
+	.main-post-centered ul.icons > li > a > i{ padding: 0; padding-right: 10px; }
 
 
 	

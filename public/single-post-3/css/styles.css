@@ -78,6 +78,7 @@ header{ font-weight: 400; }
 
 .icon{ font-size: 2em; }
 
+.height-100{ height: 100%; }
 
 ::-webkit-input-placeholder { font-size: .9em; letter-spacing: 1px; }
 
@@ -132,79 +133,93 @@ header .src-area .src-btn{ position: absolute; top: 0; bottom: 0; left: 0; width
 
 .menu-nav-icon{ display: none; height: 60px; width: 50px; text-align: center; line-height: 60px; cursor: pointer; 
 	position: absolute; right: 0; font-size: 1.8em; }
-	
-	
-	
+
+
 /* ---------------------------------
 4. SLIDER
 --------------------------------- */
 
-.slider{ height: 400px; width: 100%; background-size: cover; margin: 0;
-	background-image: url(../../images/category-1.jpg); }  
+.slider-landing{ height: 600px; width: 100%; background-size: cover; position: relative; z-index: 1;
+	background-image: url(../../images/slider-1-1600x900.jpg); color: #fff; }
 
-.slider .title{ color: #fff; text-shadow: 2px 2px 10px rgba(0,0,0,.3); }
- 
+.slider-landing:after{ content:'';  position: absolute; top: 0; bottom: 0; left: 0; right: 0; z-index: -1;
+	background: rgba(0,0,0,.3); }
+	
+.slider-landing .title{ margin: 10px 0; }
+
+.slider-landing .post-info{ position: relative; padding: 30px 0; display: inline-block; text-align: left; }
+
+.slider-landing .post-info .left-area{ height: 70px; width: 70px; border-radius: 100px; overflow: hidden; position: absolute;
+	top: 50%; margin-top: -35px; border: 6px	solid #fff; box-shadow: 0px 0px 5px rgba(0,0,0,.3); }
+
+.slider-landing .post-info .middle-area{ padding-left: 90px; display: inline-block; }
+
+.slider-landing .post-info .date{ display: inline-block; color: #eee; }
+
+.slider-landing .post-info .right-area{ float: right; }
 
  
 /* ---------------------------------
 5. BLOG POST
 --------------------------------- */
 
-.post-area-sidebar{ box-shadow: 0px 0px 5px rgba(0,0,0,.1); border-bottom: 1px solid #eee; background: #fff; }
+.post-area-landing{ box-shadow: 0px 0px 5px rgba(0,0,0,.1); border-bottom: 1px solid #eee; background: #fff; }
 
-.post-area-sidebar .post-info{ position: relative; padding: 30px 0; }
+.post-area-landing .post-info{ position: relative; padding: 30px 0; }
 
-.post-area-sidebar .post-info .left-area{ height: 70px; width: 70px; border-radius: 100px; overflow: hidden; position: absolute;
+.post-area-landing .post-info .left-area{ height: 70px; width: 70px; border-radius: 100px; overflow: hidden; position: absolute;
 	top: 50%; margin-top: -35px; border: 6px	solid #fff; box-shadow: 0px 0px 5px rgba(0,0,0,.3); }
 
-.post-area-sidebar .post-info .middle-area{ padding-left: 90px; display: inline-block; }
+.post-area-landing .post-info .middle-area{ padding-left: 90px; display: inline-block; }
 
-.post-area-sidebar .post-info .date{ display: inline-block; color: #999; }
+.post-area-landing .post-info .date{ display: inline-block; color: #999; }
 
-.post-area-sidebar .post-info .right-area{ float: right; }
+.post-area-landing .post-info .right-area{ float: right; }
+
+.post-area-landing .post-image{ max-height: 500px; overflow: hidden;  }
+
 
 
 /* ---------------------------------
-6. MAIN POST ( LEF AREA )
+6. MAIN POST
 --------------------------------- */
 
-.main-post-sidebar{ border-right: 1px solid #ddd; }
+.main-post-landing .post-top-area,
+.main-post-landing .post-bottom-area{ margin: 0 70px; }
 
-.main-post-sidebar .blog-post-inner{ padding-right: 30px; }
+.main-post-landing .para{ margin: 50px 0; }
 
-.main-post-sidebar .title{ margin-bottom: 30px; }
+.main-post-landing ul.tags{ margin: 30px 0; }
 
-.main-post-sidebar .para{ margin: 30px 0; }
-
-.main-post-sidebar ul.tags{ margin: 30px 0; }
-
-.main-post-sidebar ul.tags > li > a{ padding: 7px 10px; margin-bottom: 10px; margin-right: 10px; float: left;
+.main-post-landing ul.tags > li > a{ padding: 7px 10px; margin-bottom: 10px; margin-right: 10px; float: left;
 	border: 1px solid #ddd; background: #ddd; }
 
-.main-post-sidebar ul.tags > li > a:hover{ background: none; }
+.main-post-landing ul.tags > li > a:hover{ background: none; }
+
 
 
 /* ICONS */
 
-.main-post-sidebar .post-icons-area{ margin: 30px 0; padding: 30px 30px 30px 0; overflow: hidden;
+.main-post-landing .post-icons-area{ margin: 30px 0; padding: 30px 0; overflow: hidden;
 	border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; }
 
-.main-post-sidebar ul.post-icons{ float: left; }
+.main-post-landing ul.post-icons{ float: left; }
 
-.main-post-sidebar ul.post-icons > li > a{ padding-right: 15px; }
+.main-post-landing ul.post-icons > li > a{ padding-right: 15px; }
 
-.main-post-sidebar ul.post-icons > li > a > i{ padding-right: 10px; font-size: 1.1em; opacity: .5; }
+.main-post-landing ul.post-icons > li > a > i{ padding-right: 10px; font-size: 1.1em; opacity: .5; }
 
-.main-post-sidebar ul.icons{ float: right; }
+.main-post-landing ul.icons{ float: right; }
 
-.main-post-sidebar ul.icons > li > a > i{ padding-left: 15px; font-size: 1.1em; opacity: .5; }
+.main-post-landing ul.icons > li > a > i{ padding-left: 15px; font-size: 1.1em; opacity: .5; }
+
 
 
 /* POST FOOTER */
 
-.main-post-sidebar .post-footer.post-info{ margin-top: 30px; padding-right: 30px; }
+.main-post-landing .post-footer.post-info{ margin-top: 30px; padding-right: 30px; }
 
-.main-post-sidebar .post-footer{ margin-bottom: 30px; }
+.main-post-landing .post-footer{ margin-bottom: 50px; }
 
 
 
@@ -240,7 +255,7 @@ header .src-area .src-btn{ position: absolute; top: 0; bottom: 0; left: 0; width
 
 .tag-area > ul > li > a{ padding: 7px 12px; float: left; margin: 0 5px 5px 0; border: 1px solid #eee; background: #F5F6F8; }
 
-.tag-area > ul > li > a:hover{ background: none; }
+.tag-area > ul > li > a:hover{ background: none;  }
 
 
 
@@ -337,15 +352,12 @@ footer .footer-section .title{ margin-bottom: 20px; }
 
 footer .footer-section ul > li{ margin-right: 10px; margin-top: 10px; }
 
-
-footer .copyright{ margin: 10px 0; }
-
+footer .copyright{ margin: 10px 0 20px; }
 
 footer .icons > li > a{ height: 40px; width: 40px; border-radius: 40px; line-height: 40px; text-align: center; 
-	transition: all .3s; font-size: 1.2em; box-shadow: 0px 0px 2px rgba(0,0,0,1); background: #498BF9; color: #fff; }
+	transition: all .3s; box-shadow: 0px 0px 2px rgba(0,0,0,1); background: #498BF9; color: #fff; }
 
 footer .icons > li > a:hover{ transform: translateY(-2px); box-shadow: 5px 10px 20px rgba(0,0,0,.3); }
-
 
 footer .input-area{ position: relative; height: 50px; width: 100%; box-shadow: 0px 0px 1px #bbb; background: #F5F7F6; }
 

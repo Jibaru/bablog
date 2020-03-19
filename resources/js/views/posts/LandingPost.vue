@@ -1,36 +1,7 @@
 <template>
 
     <div>
-        <div class="main-post-centered">
-
-            <div class="post-top-area">
-
-                <h5 class="pre-title">FASHION</h5>
-
-                <h3 class="title"><a href="#"><b>How Did Van Gogh's Turbulent Mind Depict One of the Most Complex Concepts in Physics?</b></a></h3>
-
-                <div class="post-info">
-
-                    <div class="left-area">
-                        <a class="avatar" href="#"><img src="images/avatar-1-120x120.jpg" alt="Profile Image"></a>
-                    </div>
-
-                    <div class="middle-area">
-                        <a class="name" href="#"><b>Katy Liu</b></a>
-                        <h6 class="date">on Sep 29, 2017 at 9:48 am</h6>
-                    </div>
-
-                </div><!-- post-info -->
-
-                <p class="para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                    ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                    nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-
-            </div><!-- post-top-area -->
-
-            <div class="post-image"><img src="images/blog-1-1000x600.jpg" alt="Blog Image"></div>
+        <div class="main-post-landing">
 
             <div class="post-bottom-area">
 
@@ -77,16 +48,7 @@
 
             </div><!-- post-bottom-area -->
 
-        </div>
-
+        </div><!-- main-post -->
     </div>
 
 </template>
-
-<script>
-
-    export default {
-
-    }
-
-</script>

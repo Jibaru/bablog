@@ -18,6 +18,8 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->dateTime('date_time');
             $table->string('type'); // big, medium, normal (para las vistas)
+            $table->string('card_type');
+            $table->string('description');
             $table->text('content');
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')

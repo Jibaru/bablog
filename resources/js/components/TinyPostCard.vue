@@ -2,43 +2,40 @@
     
     <div>
         <div class="card h-100">
-            <div class="single-post post-style-4">
+            <div class="single-post post-style-4 mb-0">
 
                 <div class="display-table">
-                    <h4 class="title display-table-cell"><a href="#"><b>How Did Van Gogh's Turbulent Mind Depict One of the Most Complex
-                        Concepts in Physics?</b></a></h4>
+                    <h4 class="title display-table-cell">
+                        <a href="#">
+                            <b>{{post.title}}</b>
+                        </a>
+                    </h4>
                 </div>
 
                 <ul class="post-footer">
-                    <li><a href="#"><i class="ion-heart"></i>57</a></li>
-                    <li><a href="#"><i class="ion-chatbubble"></i>6</a></li>
-                    <li><a href="#"><i class="ion-eye"></i>138</a></li>
+                    <li><a href="#"><i class="ion-heart"></i>{{post.likesCount}}</a></li>
+                    <li><a href="#"><i class="ion-chatbubble"></i>{{post.commentsCount}}</a></li>
+                    <li><a href="#"><i class="ion-eye"></i>{{post.viewsCount}}</a></li>
                 </ul>
 
-            </div><!-- single-post -->
+            </div>
 
-            <div class="single-post">
-
-                <div class="display-table">
-                    <h4 class="title display-table-cell"><a href="#"><b>How Did Van Gogh's Turbulent Mind Depict One of the Most Complex
-                        Concepts in Physics?</b></a></h4>
-                </div>
-
-                <ul class="post-footer">
-                    <li><a href="#"><i class="ion-heart"></i>57</a></li>
-                    <li><a href="#"><i class="ion-chatbubble"></i>6</a></li>
-                    <li><a href="#"><i class="ion-eye"></i>138</a></li>
-                </ul>
-
-            </div><!-- single-post -->
-
-        </div><!-- card -->
+        </div>
     </div>
 
 </template>
 
 <script>
     export default {
-        name: 'TinyPostCard'   
+        name: 'TinyPostCard',
+        props: {
+            to: {
+                type: String,
+                default: '#'
+            },
+            post: {
+                type: Object
+            }
+        }
     }
 </script>
