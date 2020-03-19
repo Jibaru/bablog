@@ -38,6 +38,6 @@ class ImportDataSql extends Command
      */
     public function handle()
     {
-        DB::unprepared(file_get_contents('../../../database/migrations/initial_data.sql'));
+        DB::unprepared(file_get_contents('database/migrations/initial_data.sql'));
     }
 }
