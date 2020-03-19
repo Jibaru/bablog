@@ -6,7 +6,7 @@
             <div v-for="(post, i) in posts"
                  :key="i"
                  class="col-md-6">
-                <post-card :to="`${route}/${post}`"></post-card>
+                <post-card :to="`${route}/${post.id}`" :post="post"></post-card>
             </div>
 
         </div>
@@ -34,8 +34,31 @@
         },
         data(){
             return {
-                posts: [1,2,3,4,5,6,7,8]
+                posts: [],
+                counterPage: 1
             }
+        },
+        methods: {
+            async getPostPerPage(page){
+                try {
+                    const response = await axios.get(`front-posts?page=${page}`);
+                    console.log(response);
+                    if(response.status == 200){
+                        return response.data.data;
+                    }
+
+                } catch(e) {
+                    return [];
+                }
+            },
+            async appendPosts(){
+                const paginatedPosts = await this.getPostPerPage(this.counterPage);
+                this.posts = this.posts.concat(paginatedPosts);
+                this.counterPage++;
+            }
+        },
+        mounted(){
+            this.appendPosts(this.counterPage);
         }
     }
 

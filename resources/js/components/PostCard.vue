@@ -3,7 +3,7 @@
         <div class="card h-100">
             <div class="single-post post-style-1">
 
-                <div class="blog-image"><img src="images/marion-michele-330691.jpg" alt="Blog Image"></div>
+                <div v-if="post.front_image" class="blog-image"><img :src="post.front_image.file.url" alt="Blog Image"></div>
 
                 <a class="avatar" href="#"><img src="images/icons8-team-355979.jpg" alt="Profile Image"></a>
 
@@ -11,14 +11,14 @@
 
                     <h4 class="title">
                         <router-link :to="to">
-                            <b>How Did Van Gogh's Turbulent Mind Depict One of the Most Complex Concepts in Physics?</b>
+                            <b>{{post.title}}</b>
                         </router-link>
                     </h4>
 
                     <ul class="post-footer">
-                        <li><a href="#"><i class="ion-heart"></i>57</a></li>
-                        <li><a href="#"><i class="ion-chatbubble"></i>6</a></li>
-                        <li><a href="#"><i class="ion-eye"></i>138</a></li>
+                        <li><a href="#"><i class="ion-heart"></i>{{post.likes_count}}</a></li>
+                        <li><a href="#"><i class="ion-chatbubble"></i>{{post.comments_count}}</a></li>
+                        <li><a href="#"><i class="ion-eye"></i>{{post.views_count}}</a></li>
                     </ul>
 
                 </div>
@@ -34,6 +34,9 @@
             to: {
                 type: String,
                 default: '#'
+            },
+            post: {
+                type: Object
             }
         }
 
