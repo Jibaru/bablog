@@ -3,7 +3,8 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\DB;
+use DB;
+use Storage;
 
 class ImportDataSql extends Command
 {
@@ -38,6 +39,6 @@ class ImportDataSql extends Command
      */
     public function handle()
     {
-        DB::unprepared(file_get_contents('database/migrations/initial_data.sql'));
+        DB::unprepared( file_get_contents('database/migrations/initial_data.sql') );
     }
 }
