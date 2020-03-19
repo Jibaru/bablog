@@ -2,8 +2,7 @@
 
 use Illuminate\Support\Str;
 
-$DATABASE_URL=parse_url('postgres://lwgwcnfkhwojrr:12e7641c8acf37c06ebe2410e4afe5c56400d1de6b2e85d7cecbec33b6d5fc1b@ec2-18-235-97-230.compute-1.amazonaws.com:5432/de95a4eibhpbad
-HEROKU_POSTGRESQL_BRONZE_URL');
+$DATABASE_URL=parse_url('postgres://lwgwcnfkhwojrr:12e7641c8acf37c06ebe2410e4afe5c56400d1de6b2e85d7cecbec33b6d5fc1b@ec2-18-235-97-230.compute-1.amazonaws.com:5432/de95a4eibhpbad');
 
 return [
 
@@ -89,7 +88,7 @@ return [
             'prefix' => '',
             'schema' => 'public',
             'sslmode' => 'require',
-        ]*/,
+        ],*/
 
         'sqlsrv' => [
             'driver' => 'sqlsrv',
