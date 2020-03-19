@@ -35,7 +35,7 @@ INSERT INTO `posts_likes` (`id`, `user_id`, `post_id`, `created_at`, `updated_at
 (2, 2, 1, '2020-03-18 05:00:00', '2020-03-18 05:00:00');
 
 INSERT INTO `files` (`id`, `name`, `format`, `path`, `type`, `created_at`, `updated_at`) VALUES
-(1, 'VALLE', 'PNG', 'https://pngimage.net/wp-content/uploads/2018/06/imagenes-de-paisajes-png.png', 'IMAGEN', '2020-03-18 05:00:00', '2020-03-18 05:00:00');
+(1, 'VALLE', 'PNG', '/storage/images/image_1.jpg', 'IMAGEN', '2020-03-18 05:00:00', '2020-03-18 05:00:00');
 
 INSERT INTO `posts_images` (`id`, `file_id`, `post_id`, `created_at`, `updated_at`) VALUES
 (1, 1, 1, '2020-03-18 05:00:00', '2020-03-18 05:00:00'),
