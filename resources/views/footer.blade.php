@@ -21,16 +21,16 @@
 
             <div class="col-lg-4 col-md-6">
                     <div class="footer-section">
-                    <h4 class="title"><b>CATAGORIES</b></h4>
+                    <h4 class="title"><b>TAGS</b></h4>
                     <ul>
-                        <li><a href="#">BEAUTY</a></li>
-                        <li><a href="#">HEALTH</a></li>
-                        <li><a href="#">MUSIC</a></li>
+                        <li><a href="#">INFORMÁTICA</a></li>
+                        <li><a href="#">TECNOLOGÍA</a></li>
+                        <li><a href="#">PROGRAMACIÓN</a></li>
                     </ul>
                     <ul>
-                        <li><a href="#">SPORT</a></li>
-                        <li><a href="#">DESIGN</a></li>
-                        <li><a href="#">TRAVEL</a></li>
+                        <li><a href="#">APRENDIZAJE</a></li>
+                        <li><a href="#">SINIESTRAA</a></li>
+                        <li><a href="#">GAAAA</a></li>
                     </ul>
                 </div><!-- footer-section -->
             </div><!-- col-lg-4 col-md-6 -->
@@ -38,10 +38,10 @@
             <div class="col-lg-4 col-md-6">
                 <div class="footer-section">
 
-                    <h4 class="title"><b>SUBSCRIBE</b></h4>
+                    <h4 class="title"><b>SUBSCRIBIRSE</b></h4>
                     <div class="input-area">
                         <form>
-                            <input class="email-input" type="text" placeholder="Enter your email">
+                            <input class="email-input" type="text" placeholder="Ingresa tu email">
                             <button class="submit-btn" type="submit"><i class="icon ion-ios-email-outline"></i></button>
                         </form>
                     </div>

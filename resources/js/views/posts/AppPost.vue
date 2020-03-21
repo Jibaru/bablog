@@ -22,9 +22,13 @@
                     <div class="col-lg-10 col-md-12">
                         <div class="display-table">
                             <div class="display-table-cell">
-                                <h5 class="pre-title">FASHION</h5>
+                                <h5 class="pre-title">{{currentPost.category.name}}</h5>
 
-                                <h3 class="title"><a href="#"><b>How Did Van Gogh's Turbulent Mind Depict One of the Most Complex Concepts in Physics?</b></a></h3>
+                                <h3 class="title">
+                                    <a href="#">
+                                        <b>{{currentPost.title}}</b>
+                                    </a>
+                                </h3>
 
                                 <div class="post-info">
 
@@ -33,16 +37,16 @@
                                     </div>
 
                                     <div class="middle-area">
-                                        <a class="name" href="#"><b>Katy Liu</b></a>
-                                        <h6 class="date">on Sep 29, 2017 at 9:48 am</h6>
+                                        <a class="name" href="#"><b>{{currentPost.user.name}}</b></a>
+                                        <h6 class="date">{{currentPost.dateTime}}</h6>
                                     </div>
 
-                                </div><!-- post-info -->
+                                </div>
 
-                            </div><!-- display-table-cell -->
-                        </div><!-- display-table -->
+                            </div>
+                        </div>
 
-                    </div><!-- col-lg-10 -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -52,34 +56,6 @@
                 'post-area-centered': currentType === 'CENTERED',
                 'post-area-landing': currentType === 'LANDING',
             }">
-            <div v-if="currentType === 'LANDING'">
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-md-1"></div>
-                        <div class="col-md-10">
-
-                            <div class="main-post-landing">
-
-                                <div class="post-top-area">
-
-                                    <p class="para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                                        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                        nulla pariatur. Excepteur sint
-                                        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-
-                                </div><!-- post-top-area -->
-
-                            </div><!-- main-post -->
-                        </div><!-- col-lg-8 -->
-
-                    </div><!-- row -->
-                </div><!-- container -->
-
-                <div class="post-image"><img src="images/blog-1-1000x600.jpg" alt="Blog Image"></div>
-
-            </div>
 
             <div class="container">
 
@@ -118,6 +94,7 @@
 
     import Sidebar from '../../components/Sidebar';
     import SelectorPost from '../posts/SelectorPost';
+    import Transformers from '../../utils/transformers';
 
     export default {
         props: {
@@ -134,12 +111,30 @@
         },
         data(){
             return {
-                currentType: ''
+                currentType: '',
+                currentPost: {
+                    title: '',
+                    dateTime: '',
+                    user: {
+                        id: undefined,
+                        name: ''
+                    },
+                    category: {
+                        id: undefined,
+                        name: ''
+                    }
+                }
             }
         },
         methods: {
-            updateView(type){
-                this.currentType = type;
+            updateView(post){
+                this.currentType = post.type;
+                this.currentPost.title = post.title;
+                this.currentPost.dateTime = post.dateTime;
+                this.currentPost.user.id = post.user.id;
+                this.currentPost.user.name = post.user.name;
+                this.currentPost.category.id = post.category.id;
+                this.currentPost.category.name = post.category.name;
             }
         },
         mounted(){

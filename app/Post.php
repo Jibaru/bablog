@@ -22,6 +22,7 @@ class Post extends Model
         [
             'created_at',
             'updated_at',
+            'user_id',
             'category_id'
         ];
 
@@ -33,6 +34,11 @@ class Post extends Model
             'viewed',
             'liked'
         ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 
     public function category()
     {

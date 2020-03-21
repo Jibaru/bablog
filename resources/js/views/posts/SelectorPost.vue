@@ -1,9 +1,18 @@
 <template>
 
     <div>
-        <sidebar-post v-if="post.type === 'SIDEBAR'"></sidebar-post>
-        <centered-post v-if="post.type === 'CENTERED'"></centered-post>
-        <landing-post v-if="post.type === 'LANDING'"></landing-post>
+        <sidebar-post
+            v-if="post.type === 'SIDEBAR'"
+            :post="post">
+        </sidebar-post>
+        <centered-post
+            v-if="post.type === 'CENTERED'"
+            :post="post">
+        </centered-post>
+        <landing-post
+            v-if="post.type === 'LANDING'"
+            :post="post">
+        </landing-post>
     </div>
 
 </template>
@@ -41,6 +50,11 @@
                     viewsCount: 0,
                     viewed: false,
                     liked: false,
+                    user: {
+                        id: undefined,
+                        name: '',
+                        email: ''
+                    },
                     category: {
                         id: undefined,
                         name: ''
@@ -71,7 +85,7 @@
                     if(response.status === 200){
                         const data = Transformers.keysToCamel(response.data);
                         Transformers.massiveAssignment(data, this.post);
-                        this.$emit('on-loaded', data.type);
+                        this.$emit('on-loaded', data);
                     }
 
                 } catch(e) {

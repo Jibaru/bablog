@@ -14,9 +14,9 @@
                     </h6>
 
                     <h4 class="title">
-                        <a href="#">
+                        <router-link :to="to">
                             <b>{{post.title}}</b>
-                        </a>
+                        </router-link>
                     </h4>
 
                     <p>{{post.description}}</p>
@@ -24,7 +24,7 @@
                     <div class="avatar-area">
                         <a class="avatar" href="#"><img src="images/icons8-team-355979.jpg" alt="Profile Image"></a>
                         <div class="right-area">
-                            <a class="name" href="#"><b>Lora Plamer</b></a>
+                            <a class="name" href="#"><b>{{post.user.name}}</b></a>
                             <h6 class="date" href="#">{{post.dateTime}}</h6>
                         </div>
                     </div>

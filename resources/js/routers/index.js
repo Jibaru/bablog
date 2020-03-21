@@ -6,6 +6,13 @@ export default [
         component: require('../views/home/AppHome').default,
         props: true
     },
+    { path: '*', redirect: '/' },
+    // TODO: Implementar el login. Luego de completar el front
+    /*{
+        path: '/login',
+        component: require('../views/login/AppLogin').default,
+        props: true
+    },*/
     {
         path: '/tecnologia',
         component: require('../views/categories/AppCategory').default,

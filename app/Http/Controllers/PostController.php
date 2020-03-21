@@ -14,7 +14,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return Post::with(['category', 'comments', 'likes', 'views', 'frontImage'])->get();
+        return Post::with(['user','category', 'comments', 'likes', 'views', 'frontImage'])->get();
     }
 
     /**
@@ -46,7 +46,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        return Post::with(['category', 'comments', 'likes', 'views', 'frontImage'])->get()->find($id);
+        return Post::with(['user','category', 'comments', 'likes', 'views', 'frontImage'])->get()->find($id);
     }
 
     /**
@@ -85,7 +85,7 @@ class PostController extends Controller
 
     public function front(Request $request)
     {
-        return Post::with(['category','frontImage'])
+        return Post::with(['user','category','frontImage'])
             ->paginate(10,'*',null, $request->get('page'));
     }
 }

@@ -6,9 +6,9 @@
 
                 <div class="display-table">
                     <h4 class="title display-table-cell">
-                        <a href="#">
+                        <router-link :to="to">
                             <b>{{post.title}}</b>
-                        </a>
+                        </router-link>
                     </h4>
                 </div>
 

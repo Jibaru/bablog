@@ -21,17 +21,11 @@
 </template>
 <script>
 
-    import PostCard from '../../components/PostCard';
-    import BigPostCard from '../../components/BigPostCard';
-    import TinyPostCard from '../../components/TinyPostCard';
     import Sidebar from '../../components/Sidebar';
     import ListPost from '../posts/ListPost';
 
     export default {
         components: {
-            'post-card': PostCard,
-            'big-post-card': BigPostCard,
-            'tiny-post-card': TinyPostCard,
             'sidebar': Sidebar,
             'list-post': ListPost
         }
