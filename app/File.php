@@ -32,7 +32,7 @@ class File extends Model
     public function getUrlAttribute()
     {
         $DEV = 'http://127.0.0.1:8000';
-        $PROD = "https://sistemas-archivos.herokuapp.com";
+        $PROD = "https://jibaru-blog.herokuapp.com";
         return $PROD.$this->path;
     }
 }
