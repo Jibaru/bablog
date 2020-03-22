@@ -86,6 +86,8 @@
 
             </div>
         </section>
+        <recommend-section></recommend-section>
+        <comment-section :post="currentPost"></comment-section>
     </div>
 
 </template>
@@ -94,6 +96,8 @@
 
     import Sidebar from '../../components/Sidebar';
     import SelectorPost from '../posts/SelectorPost';
+    import CommentSection from '../../components/CommentSection';
+    import RecommendSection from '../../components/RecommendSection';
     import Transformers from '../../utils/transformers';
 
     export default {
@@ -107,34 +111,56 @@
         },
         components: {
             'sidebar': Sidebar,
-            'selector-post': SelectorPost
+            'selector-post': SelectorPost,
+            'comment-section': CommentSection,
+            'recommend-section': RecommendSection,
         },
         data(){
             return {
                 currentType: '',
                 currentPost: {
+                    id: undefined,
                     title: '',
                     dateTime: '',
+                    type: '',
+                    cardType: '',
+                    description: '',
+                    content: '',
+                    commentsCount: 0,
+                    likesCount: 0,
+                    viewsCount: 0,
+                    viewed: false,
+                    liked: false,
                     user: {
                         id: undefined,
-                        name: ''
+                        name: '',
+                        email: ''
                     },
                     category: {
                         id: undefined,
                         name: ''
-                    }
+                    },
+                    comments: [],
+                    likes: [],
+                    views: [],
+                    frontImage: {
+                        id: undefined,
+                        file: {
+                            id: undefined,
+                            name: '',
+                            format: '',
+                            path: '',
+                            type: '',
+                            url: ''
+                        }
+                    },
                 }
             }
         },
         methods: {
             updateView(post){
                 this.currentType = post.type;
-                this.currentPost.title = post.title;
-                this.currentPost.dateTime = post.dateTime;
-                this.currentPost.user.id = post.user.id;
-                this.currentPost.user.name = post.user.name;
-                this.currentPost.category.id = post.category.id;
-                this.currentPost.category.name = post.category.name;
+                Transformers.massiveAssignment(post, this.currentPost);
             }
         },
         mounted(){

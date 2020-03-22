@@ -24,6 +24,11 @@ class Comment extends Model
             'post_id'
         ];
 
+    protected $appends =
+        [
+            'replies'
+        ];
+
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
@@ -32,5 +37,10 @@ class Comment extends Model
     public function post()
     {
         return $this->belongsTo(Post::class, 'post_id');
+    }
+
+    public function getRepliesAttribute()
+    {
+        return Comment::with('user')->where('thread','=', $this->id)->get();
     }
 }

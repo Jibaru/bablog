@@ -23,8 +23,8 @@
     <link href="single-post-3/css/responsive.css" rel="stylesheet">
     <link href="blog-sidebar/css/styles.css" rel="stylesheet">
     <link href="blog-sidebar/css/responsive.css" rel="stylesheet">
-    <link href="session/css/bulma.min.css" rel="stylesheet" >
-    <link href="session/css/css" rel="stylesheet" >
+    <!--<link href="session/css/bulma.min.css" rel="stylesheet" >
+    <link href="session/css/css" rel="stylesheet" >-->
 	<link href="css/app.css" rel="stylesheet">
 </head>
 <body>

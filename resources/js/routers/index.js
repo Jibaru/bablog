@@ -8,11 +8,11 @@ export default [
     },
     { path: '*', redirect: '/' },
     // TODO: Implementar el login. Luego de completar el front
-    /*{
+    {
         path: '/login',
         component: require('../views/login/AppLogin').default,
         props: true
-    },*/
+    },
     {
         path: '/tecnologia',
         component: require('../views/categories/AppCategory').default,

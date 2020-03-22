@@ -1,88 +1,92 @@
 <template>
 
-    <div>
-        <section class="hero is-success is-fullheight" style="background-image: url(&#39;https://www.animefenix.com/themes/animefenix-frans185/images/bg-login.jpg&#39;);">
-            <div class="hero-body">
-                <div class="container has-text-centered">
-                    <div class="column is-4 is-offset-4">
+    <div class="container pt-5">
 
-                        <div class="card" style="border: 0px;">
-                            <div class="card-image">
-                                <figure class="image is-4by2">
-                                    <div class="frans-no-click"></div>
-                                    <img src="images/header-login.gif" alt="Login">
-                                </figure>
-                            </div>
-                            <div class="card-content">
-                                <div class="content">
-
-                                    <div class="field">
-                                        <p class="control has-icons-left has-icons-right">
-                                            <input class="input" type="text" placeholder="Usuario" id="username">
-                                            <span class="icon is-small is-left"><i class="fas fa-user"></i></span>
-                                        </p>
-                                    </div>
-                                    <div class="field">
-                                        <p class="control has-icons-left">
-                                            <input class="input" type="password" placeholder="Contraseña" id="password">
-                                            <span class="icon is-small is-left"><i class="fas fa-lock"></i></span>
-                                        </p>
-                                    </div>
-
-                                    <div class="notification is-danger is-paddingless" id="message">
-
-                                    </div>
-                                    <div class="field">
-                                        <p class="control has-text-centered">
-                                            <button class="button is-pink" id="send_button">Ingresar</button>
-                                        </p>
-                                    </div>
-
-                                    <p class="has-text-grey has-text-weight-semibold">
-                                        <a href="https://www.animefenix.com/user/signup">Registro</a> &nbsp;·&nbsp;
-                                        <a href="https://www.animefenix.com/user/forgot-password" onclick="alert(&#39;En mantenimiento&#39;);return false;">Recuperar Contraseña</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
+        <div class="comment-form row">
+            <div class="col-md-6">
+                AQUÍ IRÁ EL LOGO
+            </div>
+            <div v-if="!register" class="col-md-6">
+            <h4 class="pt-5">
+                <b>INICIAR SESIÓN</b>
+            </h4>
+            <form method="post">
+                <div>
+                    <input type="email" aria-required="true" name="contact-form-name" class="form-control"
+                           placeholder="Email" aria-invalid="true" required >
+                </div>
+                <div>
+                    <input type="password" aria-required="true" name="contact-form-email" class="form-control"
+                           placeholder="Contraseña" aria-invalid="true" required>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <button class="submit-btn btn-block" type="submit">
+                            <b>INGRESAR</b>
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button @click="register = true"
+                                class="submit-btn btn-block"
+                                type="button">
+                            <b>¿Eres nuevo? REGÍSTRATE</b>
+                        </button>
                     </div>
                 </div>
+            </form>
+        </div>
+            <div v-if="register" class="col-md-6">
+                <h4 class="pt-5">
+                    <b>REGISTRARSE</b>
+                </h4>
+                <form method="post">
+                    <div>
+                        <input type="text" aria-required="true" name="contact-form-name" class="form-control"
+                               placeholder="Nombre" aria-invalid="true" required >
+                    </div>
+                    <div>
+                        <input type="email" aria-required="true" name="contact-form-name" class="form-control"
+                               placeholder="Email" aria-invalid="true" required >
+                    </div>
+                    <div>
+                        <input type="password" aria-required="true" name="contact-form-email" class="form-control"
+                               placeholder="Contraseña" aria-invalid="true" required>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button class="submit-btn btn-block" type="submit">
+                                <b>REGISTRARSE</b>
+                            </button>
+                        </div>
+                        <div class="col-md-6">
+                            <button @click="register = false"
+                                    class="submit-btn btn-block"
+                                    type="button">
+                                <b>¿Ya tienes una cuenta? INICIAR SESIÓN</b>
+                            </button>
+                        </div>
+                    </div>
+                </form>
             </div>
-        </section>
+        </div>
     </div>
 
 </template>
 <script>
 
     export default {
+        data(){
+            return {
+                register: false,
+                userLogin: {
 
+                },
+                userRegister: {
+
+                }
+            }
+        }
     }
 
 </script>
-<style>
 
-    .button.is-pink{
-        background-color: #e53935;
-        border-color: transparent;
-        color: #fff;
-    }
-    .frans-no-click{
-        position: absolute;
-        height: 100%;
-        width: 100%;
-    }
-
-    .hero {
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: center;
-    }
-    .hero-body{
-        background: rgba(0,0,0,0.6);
-    }
-    .card-content{
-        background-color: #222;
-    }
-</style>

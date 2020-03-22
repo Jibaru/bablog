@@ -47,7 +47,9 @@ class Post extends Model
 
     public function comments()
     {
-        return $this->hasMany(Comment::class);
+        return $this->hasMany(Comment::class)
+            ->with('user')
+            ->where('thread', '=', null);
     }
 
     public function likes()
@@ -67,7 +69,7 @@ class Post extends Model
 
     public function getCommentsCountAttribute()
     {
-        return $this->comments()->count();
+        return $this->hasMany(Comment::class)->count();
     }
 
     public function getLikesCountAttribute()
