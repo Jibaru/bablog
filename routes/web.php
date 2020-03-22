@@ -19,8 +19,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/administrador/', 'HomeController@index')->name('home');
+Route::get('/administrador', 'HomeController@index')->name('home');
 
+Route::post('/login-user', 'AuthenticationController@login');
 Route::resource('/roles', 'RoleController');
 Route::resource('/users', 'UserController');
 Route::resource('/categories', 'CategoryController');
