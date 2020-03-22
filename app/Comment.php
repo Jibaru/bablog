@@ -13,15 +13,15 @@ class Comment extends Model
             'id',
             'content',
             'date_time',
-            'thread'
+            'thread',
+            'user_id',
+            'post_id'
         ];
 
     protected $hidden =
         [
             'created_at',
-            'updated_at',
-            'user_id',
-            'post_id'
+            'updated_at'
         ];
 
     protected $appends =

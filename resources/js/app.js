@@ -1,8 +1,10 @@
 import VueRouter from 'vue-router'
+import Moment from 'moment';
 import routes from './routers/index';
 
 require('./bootstrap');
 window.Vue = require('vue');
+window.moment = Moment;
 
 Vue.component(
     'app-home',

@@ -87,7 +87,10 @@
             </div>
         </section>
         <recommend-section></recommend-section>
-        <comment-section :post="currentPost"></comment-section>
+        <comment-section
+            :post="currentPost"
+            @on-comment="updateView">
+        </comment-section>
     </div>
 
 </template>
@@ -161,6 +164,7 @@
             updateView(post){
                 this.currentType = post.type;
                 Transformers.massiveAssignment(post, this.currentPost);
+                console.log('aja', post);
             }
         },
         mounted(){

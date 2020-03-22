@@ -8,23 +8,39 @@
 
                     <div class="col-lg-8 col-md-12">
                         <div class="comment-form">
-                            <form method="post">
+                            <form method="post" @submit.prevent="checkCommentForm">
                                 <div class="row">
-                                    <div class="col-sm-6">
-                                        <input type="email" aria-required="true" name="contact-form-name" class="form-control"
-                                               placeholder="Email" aria-invalid="true" required >
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="password" aria-required="true" name="contact-form-email" class="form-control"
-                                               placeholder="Contraseña" aria-invalid="true" required>
-                                    </div>
-
                                     <div class="col-sm-12">
-									<textarea name="contact-form-message" rows="2" class="text-area-messge form-control"
-                                              placeholder="Comentario" aria-required="true" aria-invalid="false"></textarea >
+                                        <textarea
+                                            v-model="comment.content"
+                                            name="contact-form-message"
+                                            rows="2"
+                                            class="text-area-messge form-control"
+                                            placeholder="Comentario"
+                                            aria-required="true"
+                                            aria-invalid="false"
+                                            :disabled="!user.id"
+                                            required>
+                                        </textarea >
                                     </div>
                                     <div class="col-sm-12">
-                                        <button class="submit-btn" type="submit" id="form-submit"><b>PUBLICAR COMENTARIO</b></button>
+                                        <div v-if="!user.id"
+                                             class="alert alert-danger">
+                                            Necesitas estar logueado para comentar
+                                        </div>
+                                        <button
+                                            v-if="!user.id"
+                                            @click="$router.push('/login')"
+                                            class="submit-btn btn-block"
+                                            type="button">
+                                            <b>INICIAR SESIÓN</b>
+                                        </button>
+                                        <button
+                                            v-else
+                                            class="submit-btn btn-block"
+                                            type="submit">
+                                            <b>PUBLICAR COMENTARIO</b>
+                                        </button>
                                     </div>
 
                                 </div>
@@ -100,6 +116,8 @@
 
 <script>
 
+    import Transformers from '../utils/transformers';
+
     export default {
         name: 'CommentSection',
         props: {
@@ -107,9 +125,94 @@
                 type: Object
             }
         },
-        methods: {
-
+        data(){
+            return {
+                comment: {
+                    content: '',
+                    dateTime: '',
+                    thread: '',
+                    userId: '',
+                    postId: ''
+                },
+                user: {
+                    id: undefined,
+                    name: '',
+                    email: ''
+                }
+            }
         },
+        methods: {
+            async createComment(){
+                try {
+                    const body = {};
+                    body.content = this.comment.content;
+                    body.date_time = this.comment.dateTime;
+                    body.thread = this.comment.thread;
+                    body.user_id = this.comment.userId;
+                    body.post_id = this.comment.postId;
+
+                    const response = await axios.post('/comments', body);
+
+                    if(response.status === 201){
+                        this.clearForm();
+                        this.getPost(this.post.id);
+                    }
+                } catch(e){
+                    console.log(e);
+                }
+            },
+
+            async getAuth(){
+                try {
+                    const response = await axios.get('/auth');
+
+                    if(response.status === 200){
+                        if(response.data !== '' && response.data !== undefined){
+                            this.user.id = response.data.id;
+                            this.user.name = response.data.name;
+                            this.user.email = response.data.email;
+                        }
+                    }
+
+                }catch(e){
+                    console.log(e);
+                }
+            },
+
+            async getPost(id){
+                try {
+
+                    const response = await axios.get(`posts/${id}`);
+
+                    if(response.status === 200){
+                        const data = Transformers.keysToCamel(response.data);
+                        this.$emit('on-comment', data);
+                    }
+
+                } catch(e) {
+                    console.log(e);
+                }
+            },
+
+            checkCommentForm(){
+                this.comment.thread = undefined;
+                this.comment.userId = this.user.id;
+                this.comment.postId = this.post.id;
+                this.comment.dateTime = moment(Date.now()).format('YYYY-MM-DD hh:mm:ss');
+                this.createComment();
+            },
+
+            clearForm(){
+                this.comment.content = '';
+                this.comment.dateTime = '';
+                this.comment.thread = '';
+                this.comment.userId = '';
+                this.comment.postId = '';
+            }
+        },
+        mounted() {
+            this.getAuth();
+        }
     }
 
 </script>
