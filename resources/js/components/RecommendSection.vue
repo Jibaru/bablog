@@ -16,8 +16,7 @@
 
                                 <div class="blog-info">
 
-                                    <h4 class="title"><a href="#"><b>How Did Van Gogh's Turbulent Mind Depict One of the Most Complex
-                                        Concepts in Physics?</b></a></h4>
+                                    <h4 class="title"><a href="#"><b>no mames</b></a></h4>
 
                                     <ul class="post-footer">
                                         <li><a href="#"><i class="ion-heart"></i>57</a></li>
@@ -39,8 +38,7 @@
                                 <a class="avatar" href="#"><img src="images/icons8-team-355979.jpg" alt="Profile Image"></a>
 
                                 <div class="blog-info">
-                                    <h4 class="title"><a href="#"><b>How Did Van Gogh's Turbulent Mind Depict One of the Most Complex
-                                        Concepts in Physics?</b></a></h4>
+                                    <h4 class="title"><a href="#"><b>we</b></a></h4>
 
                                     <ul class="post-footer">
                                         <li><a href="#"><i class="ion-heart"></i>57</a></li>
@@ -63,8 +61,7 @@
                                 <a class="avatar" href="#"><img src="images/icons8-team-355979.jpg" alt="Profile Image"></a>
 
                                 <div class="blog-info">
-                                    <h4 class="title"><a href="#"><b>How Did Van Gogh's Turbulent Mind Depict One of the Most Complex
-                                        Concepts in Physics?</b></a></h4>
+                                    <h4 class="title"><a href="#"><b>uwu</b></a></h4>
 
                                     <ul class="post-footer">
                                         <li><a href="#"><i class="ion-heart"></i>57</a></li>
