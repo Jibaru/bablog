@@ -23,6 +23,7 @@ Route::get('/administrador', 'HomeController@index')->name('home');
 
 Route::post('/login-user', 'AuthenticationController@login');
 Route::get('/auth', 'AuthenticationController@auth');
+Route::get('/logout', 'AuthenticationController@logout');
 Route::resource('/roles', 'RoleController');
 Route::resource('/users', 'UserController');
 Route::resource('/categories', 'CategoryController');

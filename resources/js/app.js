@@ -32,8 +32,13 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.use(VueRouter);
 
 const router = new VueRouter({
-    routes
+    routes,
+    scrollBehavior() {
+        document.getElementById('app').scrollIntoView();
+    }
 });
+
+window.eventBus = new Vue;
 
 const app = new Vue({
     router

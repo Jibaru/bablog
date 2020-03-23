@@ -49,7 +49,8 @@ class Post extends Model
     {
         return $this->hasMany(Comment::class)
             ->with('user')
-            ->where('thread', '=', null);
+            ->where('thread', '=', null)
+            ->orderBy('created_at', 'desc');
     }
 
     public function likes()

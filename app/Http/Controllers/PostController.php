@@ -86,6 +86,9 @@ class PostController extends Controller
     public function front(Request $request)
     {
         return Post::with(['user','category','frontImage'])
+            ->when($request->input('category_id'), function($query) use ($request){
+                return $query->where('category_id', '=', $request->input('category_id'));
+            })
             ->paginate(10,'*',null, $request->get('page'));
     }
 }

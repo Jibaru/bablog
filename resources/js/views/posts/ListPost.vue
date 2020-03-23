@@ -58,9 +58,10 @@
             }
         },
         methods: {
-            async getPostPerPage(page){
+            async getPostPerPage(page, category){
                 try {
-                    const response = await axios.get(`front-posts?page=${page}`);
+
+                    const response = await axios.get(`front-posts?page=${page}&category_id=${category || ''}`);
 
                     if(response.status == 200){
                         return Transformers.keysToCamel(response.data.data);
@@ -72,12 +73,19 @@
                 }
             },
             async appendPosts(){
-                const paginatedPosts = await this.getPostPerPage(this.counterPage);
+                const paginatedPosts = await this.getPostPerPage(this.counterPage, this.category);
                 this.posts = this.posts.concat(paginatedPosts);
+                this.$emit('on-loaded', [...this.posts]);
             }
         },
         mounted(){
             this.appendPosts();
+        },
+        watch: {
+            '$route' (to, from) {
+                this.posts = [];
+                this.appendPosts();
+            }
         }
     }
 

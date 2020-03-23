@@ -28,4 +28,8 @@ class AuthenticationController extends Controller
     public function auth(){
         return Auth::user();
     }
+
+    public function logout(){
+        return Auth::logout();
+    }
 }

@@ -35,7 +35,16 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        return Comment::create($request->all());
+        $comment = new Comment;
+
+        $comment->content = $request->input('content');
+        $comment->user_id = $request->input('user_id');
+        $comment->post_id = $request->input('post_id');
+        $comment->date_time = $request->input('date_time');
+
+        $comment->save();
+
+        return $comment;
     }
 
     /**

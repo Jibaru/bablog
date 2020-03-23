@@ -164,7 +164,6 @@
             updateView(post){
                 this.currentType = post.type;
                 Transformers.massiveAssignment(post, this.currentPost);
-                console.log('aja', post);
             }
         },
         mounted(){

@@ -7,7 +7,6 @@ export default [
         props: true
     },
     { path: '*', redirect: '/' },
-    // TODO: Implementar el login. Luego de completar el front
     {
         path: '/login',
         component: require('../views/login/AppLogin').default,
@@ -24,7 +23,8 @@ export default [
                 path: '/',
                 component: require('../views/posts/ListPost').default,
                 props: {
-                    route: '/tecnologia/posts'
+                    route: '/posts',
+                    category: '1'
                 }
             },
             {
@@ -44,7 +44,8 @@ export default [
                 path: '/',
                 component: require('../views/posts/ListPost').default,
                 props: {
-                    route: '/desarrollo/posts'
+                    route: '/posts',
+                    category: '2'
                 }
             },
             {
@@ -64,7 +65,8 @@ export default [
                 path: '/',
                 component: require('../views/posts/ListPost').default,
                 props: {
-                    route: '/aprendizaje/posts'
+                    route: '/posts',
+                    category: '3'
                 }
             },
             {

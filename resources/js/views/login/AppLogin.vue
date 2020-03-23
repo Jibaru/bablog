@@ -190,6 +190,8 @@
 
                     if(response.status === 200){
                         this.clearLoginForm();
+                        this.$emit('on-login', 'susccess');
+                        window.eventBus.$emit('on-login', 'success');
                         this.$router.push('/');
                     }
 

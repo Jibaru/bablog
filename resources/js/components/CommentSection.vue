@@ -38,8 +38,10 @@
                                         <button
                                             v-else
                                             class="submit-btn btn-block"
-                                            type="submit">
-                                            <b>PUBLICAR COMENTARIO</b>
+                                            type="submit"
+                                            :disabled="isCommenting">
+                                            <b v-show="!isCommenting">PUBLICAR COMENTARIO</b>
+                                            <b v-show="isCommenting">PUBLICANDO COMENTARIO...</b>
                                         </button>
                                     </div>
 
@@ -138,7 +140,8 @@
                     id: undefined,
                     name: '',
                     email: ''
-                }
+                },
+                isCommenting: false
             }
         },
         methods: {
@@ -153,11 +156,13 @@
 
                     const response = await axios.post('/comments', body);
 
+                    this.isCommenting = false;
                     if(response.status === 201){
                         this.clearForm();
                         this.getPost(this.post.id);
                     }
                 } catch(e){
+                    this.isCommenting = false;
                     console.log(e);
                 }
             },
@@ -195,6 +200,7 @@
             },
 
             checkCommentForm(){
+                this.isCommenting = true;
                 this.comment.thread = undefined;
                 this.comment.userId = this.user.id;
                 this.comment.postId = this.post.id;
