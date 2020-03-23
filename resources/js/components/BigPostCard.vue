@@ -22,7 +22,7 @@
                     <p>{{post.description}}</p>
 
                     <div class="avatar-area">
-                        <a class="avatar" href="#"><img src="images/icons8-team-355979.jpg" alt="Profile Image"></a>
+                        <a class="avatar" href="#"><img :src="post.user.file.url" alt="Profile Image"></a>
                         <div class="right-area">
                             <a class="name" href="#"><b>{{post.user.name}}</b></a>
                             <h6 class="date" href="#">{{post.dateTime}}</h6>

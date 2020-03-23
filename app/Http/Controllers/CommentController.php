@@ -38,6 +38,7 @@ class CommentController extends Controller
         $comment = new Comment;
 
         $comment->content = $request->input('content');
+        $comment->thread = $request->input('thread');
         $comment->user_id = $request->input('user_id');
         $comment->post_id = $request->input('post_id');
         $comment->date_time = $request->input('date_time');

@@ -4,7 +4,7 @@
         <header>
             <div class="container-fluid position-relative no-side-padding">
 
-                <a href="#" class="logo"><img src="images/logo.png" alt="Logo Image"></a>
+                <a href="/#/" class="logo"><img src="images/logo.png" alt="Logo Image"></a>
 
                 <div class="menu-nav-icon" data-nav-menu="#main-menu"><i class="ion-navicon"></i></div>
 
@@ -26,11 +26,11 @@
 
                 <div v-if="user.id" class="user-avatar-navbar" @click="displayUserMenu = !displayUserMenu">
                     <a href="#" class="avatar" >
-                        <img src="images/icons8-team-355979.jpg" alt="Profile Image">
+                        <img :src="user.file.url" alt="Profile Image">
                     </a>
                 </div>
-                <div v-else class="user-login-navbar" @click="$router.push('/login')">
-                    <a href="#" class="avatar" >
+                <div v-else class="user-login-navbar">
+                    <a href="/#/login" class="avatar" >
                         Iniciar Sesión
                     </a>
                 </div>
@@ -47,8 +47,11 @@
             <div id="menu-user-navbar"
                  class="card"
                  v-if="displayUserMenu">
+                <div class="text-right p-3">
+                    <span style="cursor: pointer" @click="displayUserMenu = false;">X</span>
+                </div>
                 <ul class="list-group">
-                    <li class="list-group-item">
+                    <li class="p-3">
                         <div class="row">
                             <div class="col-3">
                                 <i class="icon ion-log-out"></i>
@@ -60,6 +63,9 @@
                     </li>
                 </ul>
             </div>
+        </transition>
+        <transition name="slide-right-fade">
+            <div v-if="displayUserMenu" class="backdrop-navbar"></div>
         </transition>
     </div>
 
@@ -74,7 +80,10 @@
                 user: {
                     id: undefined,
                     name: '',
-                    email: ''
+                    email: '',
+                    file: {
+                        url: ''
+                    }
                 },
                 displayUserMenu: false
             }
@@ -89,6 +98,7 @@
                             this.user.id = response.data.id;
                             this.user.name = response.data.name;
                             this.user.email = response.data.email;
+                            this.user.file.url = response.data.file.url;
                         }
                     }
 
@@ -113,6 +123,7 @@
                 this.user.id = undefined;
                 this.user.name = '';
                 this.user.email = '';
+                this.user.file.url = '';
             }
 
         },
@@ -158,12 +169,23 @@
     }
 
     #menu-user-navbar {
-        width: 300px;
+        width: 100%;
+        max-width: 411px;
         height: 100%;
         position: fixed;
-        top: 60px;
+        top: 0;
         right: 0;
-        z-index: 998;
+        z-index:  1001;
+    }
+
+    .backdrop-navbar {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        background-color: rgba(0,0,0,0.5);
+        top: 0;
+        right: 0;
+        z-index:  1000;
     }
 
     .slide-fade-enter-active {
@@ -172,6 +194,21 @@
     .slide-fade-leave-active {
         transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
     }
+
+    .slide-right-fade-enter-active {
+        transition: all .3s ease;
+    }
+
+    .slide-right-fade-leave-active {
+        transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+    }
+
+    .slide-right-fade-enter, .slide-right-fade-leave-to
+        /* .slide-fade-leave-active below version 2.1.8 */ {
+        transform: translateX(-10px);
+        opacity: 0;
+    }
+
     .slide-fade-enter, .slide-fade-leave-to
         /* .slide-fade-leave-active below version 2.1.8 */ {
         transform: translateX(10px);

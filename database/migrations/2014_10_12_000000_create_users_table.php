@@ -22,6 +22,11 @@ class CreateUsersTable extends Migration
                 ->references('id')
                 ->on('roles')
                 ->onDelete('cascade');
+            $table->unsignedBigInteger('file_id');
+            $table->foreign('file_id')
+                ->references('id')
+                ->on('files')
+                ->onDelete('cascade');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

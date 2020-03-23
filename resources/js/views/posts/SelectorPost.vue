@@ -53,7 +53,20 @@
                     user: {
                         id: undefined,
                         name: '',
-                        email: ''
+                        email: '',
+                        file: {
+                            id: undefined,
+                            name: '',
+                            format: '',
+                            path: '',
+                            type: '',
+                            url: ''
+                        },
+                        role: {
+                            id: '',
+                            name: '',
+                            permission: ''
+                        }
                     },
                     category: {
                         id: undefined,

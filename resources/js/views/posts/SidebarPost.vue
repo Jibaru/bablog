@@ -8,7 +8,7 @@
                 <div class="post-info">
 
                     <div class="left-area">
-                        <a class="avatar" href="#"><img src="images/avatar-1-120x120.jpg" alt="Profile Image"></a>
+                        <a class="avatar" href="#"><img :src="post.user.file.url" alt="Profile Image"></a>
                     </div>
 
                     <div class="middle-area">
@@ -45,16 +45,19 @@
             <div class="post-icons-area">
                 <ul class="post-icons">
                     <li>
-                        <a :class="{'icon-gray-jibaru': !post.liked, 'icon-blue-jibaru': post.liked}" href="#">
+                        <a :class="{'icon-gray-jibaru': !post.liked, 'icon-blue-jibaru': post.liked}"
+                           href="javascript:void(0);">
                             <i class="ion-heart"></i>{{post.likesCount}}
                         </a>
                     </li>
                     <li>
-                        <a :class="{'icon-gray-jibaru': post.commentsCount == 0, 'icon-blue-jibaru': post.commentsCount > 0}" href="#">
+                        <a :class="{'icon-gray-jibaru': post.commentsCount == 0, 'icon-blue-jibaru': post.commentsCount > 0}"
+                           href="javascript:void(0);">
                             <i class="ion-chatbubble"></i>{{post.commentsCount}}
                         </a>
                     </li>
-                    <li><a :class="{'icon-gray-jibaru': !post.viewed, 'icon-blue-jibaru': post.viewed}" href="#">
+                    <li><a :class="{'icon-gray-jibaru': !post.viewed, 'icon-blue-jibaru': post.viewed}"
+                           href="javascript:void(0);">
                         <i class="ion-eye"></i>{{post.viewsCount}}</a>
                     </li>
                 </ul>
@@ -70,7 +73,7 @@
             <div class="post-footer post-info">
 
                 <div class="left-area">
-                    <a class="avatar" href="#"><img src="images/avatar-1-120x120.jpg" alt="Profile Image"></a>
+                    <a class="avatar" href="#"><img :src="post.user.file.url" alt="Profile Image"></a>
                 </div>
 
                 <div class="middle-area">
@@ -93,6 +96,58 @@
             post: {
                 type: Object
             }
+        },
+        data(){
+            return {
+                user: {
+                    id: undefined
+                }
+            }
+        },
+        methods: {
+            async createLike(){
+                console.log('leik');
+            },
+            async createView(postId){
+                try {
+
+                    const body = {};
+
+                    body.post_id = postId;
+                    body.user_id = this.user.id;
+
+                    const response = await axios.post('/posts-views', body);
+
+                    console.log(response);
+                }catch(e){
+                    console.log(e);
+                }
+            },
+            async getAuth(){
+                try {
+                    const response = await axios.get('/auth');
+
+                    console.log(response);
+
+                    if(response.status === 200){
+                        if(response.data !== '' && response.data !== undefined){
+                            this.user.id = response.data.id;
+                        } else {
+                            this.user.id = undefined;
+                        }
+                    }
+
+                }catch(e){
+                    console.log(e);
+                }
+            },
+        },
+        mounted(){
+            this.getAuth().then((_) => {
+                if(!this.post.viewed && this.user.id !== undefined){
+                    this.createView(this.post.id);
+                }
+            });
         }
     }
 

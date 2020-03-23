@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\PostView;
 
 class PostViewController extends Controller
 {
@@ -34,7 +35,14 @@ class PostViewController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $postView = new PostView;
+
+        $postView->post_id = $request->input('post_id');
+        $postView->user_id = $request->input('user_id');
+
+        $postView->save();
+
+        return $postView;
     }
 
     /**

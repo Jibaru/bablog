@@ -55,9 +55,10 @@ export default {
             Object.keys(from)
                 .forEach((k) => {
                     if(!this.isObject(from[k])){
-                        to[k] = from[k];
+                        if(to != undefined){
+                            to[k] = from[k];
+                        }
                     } else {
-                        console.log(from[k], to[k], 'as');
                         this.massiveAssignment(from[k], to[k]);
                     }
                 });

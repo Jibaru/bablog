@@ -33,7 +33,7 @@
                                 <div class="post-info">
 
                                     <div class="left-area">
-                                        <a class="avatar" href="#"><img src="images/avatar-1-120x120.jpg" alt="Profile Image"></a>
+                                        <a class="avatar" href="#"><img :src="currentPost.user.file.url" alt="Profile Image"></a>
                                     </div>
 
                                     <div class="middle-area">
@@ -137,7 +137,20 @@
                     user: {
                         id: undefined,
                         name: '',
-                        email: ''
+                        email: '',
+                        file: {
+                            id: undefined,
+                            name: '',
+                            format: '',
+                            path: '',
+                            type: '',
+                            url: ''
+                        },
+                        role: {
+                            id: '',
+                            name: '',
+                            permission: ''
+                        }
                     },
                     category: {
                         id: undefined,

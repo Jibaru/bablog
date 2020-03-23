@@ -15,7 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return User::with('role')->get();
+        return User::with(['role', 'file'])->get();
     }
 
     /**
@@ -41,6 +41,7 @@ class UserController extends Controller
 
         $user->name = $request->name;
         $user->role_id = $request->role_id;
+        $user->file_id = $request->file_id ? $request->file_id : 2;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         
@@ -57,7 +58,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        return User::with('role')->get()->find($id);
+        return User::with(['role', 'file'])->get()->find($id);
     }
 
     /**

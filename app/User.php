@@ -25,7 +25,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token', 'role_id', 'created_at', 'updated_at', 'email_verified_at'
+        'password', 'remember_token', 'role_id', 'file_id', 'created_at', 'updated_at', 'email_verified_at'
     ];
 
     /**
@@ -40,5 +40,10 @@ class User extends Authenticatable
     public function role()
     {
         return $this->belongsTo(Role::class, 'role_id');
+    }
+
+    public function file()
+    {
+        return $this->belongsTo(File::class, 'file_id');
     }
 }

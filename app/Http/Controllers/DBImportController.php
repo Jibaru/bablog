@@ -10,13 +10,13 @@ class DBImportController extends Controller
     public function insertAll(){
         try {
             $this->insertRoles();
+            $this->insertFiles();
             $this->insertUsers();
             $this->insertCategories();
             $this->insertPosts();
             $this->insertComments();
             $this->insertPostViews();
             $this->insertPostLikes();
-            $this->insertFiles();
             $this->insertPostImages();
 
             return "Insertado correctamente";
@@ -35,9 +35,9 @@ class DBImportController extends Controller
 
     public function insertUsers(){
         DB::insert("
-    INSERT INTO users (id, name, email, role_id, email_verified_at, password, remember_token, created_at, updated_at) VALUES
-    (1, 'Ignacio Raúl', 'ignacioruedaboada@hotmail.com', 1, NULL, '$2y$10"."$"."WxY22RZzYx1Y91H5ib9CjOJ9A8dNQSVWzYpOqDmoFV1FtzABiJx9a', NULL, '2020-03-19 04:48:01', '2020-03-19 04:48:01'),
-    (2, 'Jorge Sánchez', 'jorgesanchez@gmail.com', 2, NULL, '$2y$10"."$"."hs.DFhsLj62Rtu5SGNu5au5/nahpmLXPpf980D6vjrpixRHlFjcw2', NULL, '2020-03-19 04:49:17', '2020-03-19 04:49:17')");
+    INSERT INTO users (id, name, email, role_id, file_id, email_verified_at, password, remember_token, created_at, updated_at) VALUES
+    (1, 'Ignacio Raúl', 'ignacioruedaboada@hotmail.com', 1, 2, NULL, '$2y$10"."$"."WxY22RZzYx1Y91H5ib9CjOJ9A8dNQSVWzYpOqDmoFV1FtzABiJx9a', NULL, '2020-03-19 04:48:01', '2020-03-19 04:48:01'),
+    (2, 'Jorge Sánchez', 'jorgesanchez@gmail.com', 2, 2,NULL, '$2y$10"."$"."hs.DFhsLj62Rtu5SGNu5au5/nahpmLXPpf980D6vjrpixRHlFjcw2', NULL, '2020-03-19 04:49:17', '2020-03-19 04:49:17')");
 
     }
 
@@ -91,7 +91,8 @@ class DBImportController extends Controller
     public function insertFiles(){
         DB::insert("
     INSERT INTO files (id, name, format, path, type, created_at, updated_at) VALUES
-(1, 'VALLE', 'PNG', '/files/images/image_1.jpg', 'IMAGEN', '2020-03-18 05:00:00', '2020-03-18 05:00:00')
+(1, 'VALLE', 'PNG', '/files/images/image_1.jpg', 'IMAGEN', '2020-03-18 05:00:00', '2020-03-18 05:00:00'),
+(2, 'AVATAR', 'JPG', '/files/images/avatar-default.jpg', 'IMAGEN', '2020-03-18 05:00:00', '2020-03-18 05:00:00')
     ");
     }
 

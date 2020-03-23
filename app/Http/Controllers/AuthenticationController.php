@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\LoginFormRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\User;
 
 class AuthenticationController extends Controller
 {
@@ -26,7 +27,14 @@ class AuthenticationController extends Controller
     }
 
     public function auth(){
-        return Auth::user();
+        $user = Auth::user();
+
+        if($user){
+            return User::with(['file', 'role'])->where('id', '=', Auth::id())->get()->last();
+        } else {
+            return $user;
+        }
+
     }
 
     public function logout(){

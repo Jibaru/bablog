@@ -33,6 +33,6 @@ class File extends Model
     {
         $DEV = 'http://127.0.0.1:8000';
         $PROD = "https://jibaru-blog.herokuapp.com";
-        return $PROD.$this->path;
+        return $DEV.$this->path;
     }
 }

@@ -5,7 +5,7 @@
 
                 <div v-if="post.frontImage" class="blog-image"><img :src="post.frontImage.file.url" alt="Blog Image"></div>
 
-                <a class="avatar" href="#"><img src="images/icons8-team-355979.jpg" alt="Profile Image"></a>
+                <a class="avatar" href="#"><img :src="post.user.file.url" alt="Profile Image"></a>
 
                 <div class="blog-info">
 

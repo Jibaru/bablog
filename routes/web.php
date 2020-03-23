@@ -30,5 +30,6 @@ Route::resource('/categories', 'CategoryController');
 Route::resource('/posts', 'PostController');
 Route::get('/front-posts', 'PostController@front');
 Route::resource('/comments', 'CommentController');
+Route::resource('/posts-views', 'PostViewController');
 
 Route::get('/insert-all', 'DBImportController@insertAll');
