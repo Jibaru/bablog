@@ -59134,11 +59134,7 @@ var staticRenderFns = [
                   _c("div", { staticClass: "blog-info" }, [
                     _c("h4", { staticClass: "title" }, [
                       _c("a", { attrs: { href: "#" } }, [
-                        _c("b", [
-                          _vm._v(
-                            "How Did Van Gogh's Turbulent Mind Depict One of the Most Complex\n                                    Concepts in Physics?"
-                          )
-                        ])
+                        _c("b", [_vm._v("no mames")])
                       ])
                     ]),
                     _vm._v(" "),
@@ -59193,11 +59189,7 @@ var staticRenderFns = [
                   _c("div", { staticClass: "blog-info" }, [
                     _c("h4", { staticClass: "title" }, [
                       _c("a", { attrs: { href: "#" } }, [
-                        _c("b", [
-                          _vm._v(
-                            "How Did Van Gogh's Turbulent Mind Depict One of the Most Complex\n                                    Concepts in Physics?"
-                          )
-                        ])
+                        _c("b", [_vm._v("we")])
                       ])
                     ]),
                     _vm._v(" "),
@@ -59252,11 +59244,7 @@ var staticRenderFns = [
                   _c("div", { staticClass: "blog-info" }, [
                     _c("h4", { staticClass: "title" }, [
                       _c("a", { attrs: { href: "#" } }, [
-                        _c("b", [
-                          _vm._v(
-                            "How Did Van Gogh's Turbulent Mind Depict One of the Most Complex\n                                    Concepts in Physics?"
-                          )
-                        ])
+                        _c("b", [_vm._v("uwu")])
                       ])
                     ]),
                     _vm._v(" "),
