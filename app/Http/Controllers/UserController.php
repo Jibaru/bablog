@@ -39,12 +39,12 @@ class UserController extends Controller
         
         $user = new User;
 
-        $user->name = $request->name;
-        $user->role_id = $request->role_id;
-        $user->file_id = $request->file_id ? $request->file_id : 2;
-        $user->email = $request->email;
-        $user->password = Hash::make($request->password);
-        
+        $user->name = $request->input('name');
+        $user->role_id = $request->input('role_id');
+        $user->file_id = $request->input('file_id') ? $request->input('file_id') : 2;
+        $user->email = $request->input('email');
+        $user->password = Hash::make($request->input('password'));
+
         $user->save();
 
         return $user;

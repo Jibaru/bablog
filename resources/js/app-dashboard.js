@@ -8,17 +8,22 @@ window.Vue = require('vue');
 Vue.use(VueRouter);
 
 Vue.component(
-    'app-menu',
-    require('./components/AppMenu.vue').default
+    'app-administrator',
+    require('./views/administrator/AppAdministrator').default
 );
 
+Vue.component(
+    'navbar-administrator',
+    require('./components/NavBarAdministator').default
+);
+
+
 const router = new VueRouter({
-    mode: 'history',
+
     routes
 });
 
 const app = new Vue({
     router: router,
-    el: '#app-dashboard'
-});
+}).$mount('#app-dashboard');;
 

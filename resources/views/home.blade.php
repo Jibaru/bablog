@@ -8,6 +8,17 @@
         </div>
     @endif
 
-    <router-view></router-view>
+    @if(Auth::check())
+        @if(Auth::user()->role_id == 1)
+            <app-administrator></app-administrator>
+            <div>
+                <router-view></router-view>
+            </div>
+        @else
+            <div >No puedes acceder a este sitio</div>
+        @endif
+    @endif
+
+
 
 @endsection
