@@ -9,6 +9,7 @@
 
     <link href="css/app.css" rel="stylesheet">
     <link href="common-css/ionicons.css" rel="stylesheet">
+
 </head>
 <body>
     <div id="app-dashboard">

@@ -11,6 +11,11 @@ export default [
         component: require('../views/users/AppUser').default,
         props: true,
     },
+    {
+        path: '/roles',
+        component: require('../views/roles/AppRole').default,
+        props: true,
+    },
 
 
 ]

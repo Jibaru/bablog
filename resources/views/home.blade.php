@@ -11,7 +11,7 @@
     @if(Auth::check())
         @if(Auth::user()->role_id == 1)
             <app-administrator></app-administrator>
-            <div>
+            <div class="p-2">
                 <router-view></router-view>
             </div>
         @else
