@@ -33,7 +33,7 @@
                     label="ARCHIVO PERFIL"
                     placeholder="SELECCIONE"
                     :use-service="true"
-                    url-service="roles"
+                    url-service="files"
                     :single-value-as-object="true"
                     required>
                 </app-multiselect>

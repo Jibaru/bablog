@@ -3349,16 +3349,13 @@ __webpack_require__.r(__webpack_exports__);
         comments: [],
         likes: [],
         views: [],
-        frontImage: {
+        file: {
           id: undefined,
-          file: {
-            id: undefined,
-            name: '',
-            format: '',
-            path: '',
-            type: '',
-            url: ''
-          }
+          name: '',
+          format: '',
+          path: '',
+          type: '',
+          url: ''
         }
       }
     };
@@ -4168,16 +4165,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         comments: [],
         likes: [],
         views: [],
-        frontImage: {
+        file: {
           id: undefined,
-          file: {
-            id: undefined,
-            name: '',
-            format: '',
-            path: '',
-            type: '',
-            url: ''
-          }
+          name: '',
+          format: '',
+          path: '',
+          type: '',
+          url: ''
         }
       }
     };
@@ -58873,13 +58867,13 @@ var render = function() {
         ? _c("div", { staticClass: "single-post post-style-2" }, [
             _c("div", { staticClass: "blog-image" }, [
               _c("img", {
-                attrs: { src: _vm.post.frontImage.file.url, alt: "Blog Image" }
+                attrs: { src: _vm.post.file.url, alt: "Blog Image" }
               })
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "blog-info" }, [
               _c("h6", { staticClass: "pre-title" }, [
-                _c("a", { attrs: { href: "#" } }, [
+                _c("a", { attrs: { href: "javacript:void(0);" } }, [
                   _c("b", [_vm._v(_vm._s(_vm.post.category.name))])
                 ])
               ]),
@@ -59648,10 +59642,10 @@ var render = function() {
   return _c("div", [
     _c("div", { staticClass: "card h-100" }, [
       _c("div", { staticClass: "single-post post-style-1" }, [
-        _vm.post.frontImage
+        _vm.post.file
           ? _c("div", { staticClass: "blog-image" }, [
               _c("img", {
-                attrs: { src: _vm.post.frontImage.file.url, alt: "Blog Image" }
+                attrs: { src: _vm.post.file.url, alt: "Blog Image" }
               })
             ])
           : _vm._e(),

@@ -3,7 +3,7 @@
         <div class="card h-100">
             <div class="single-post post-style-1">
 
-                <div v-if="post.frontImage" class="blog-image"><img :src="post.frontImage.file.url" alt="Blog Image"></div>
+                <div v-if="post.file" class="blog-image"><img :src="post.file.url" alt="Blog Image"></div>
 
                 <a class="avatar" href="#"><img :src="post.user.file.url" alt="Profile Image"></a>
 

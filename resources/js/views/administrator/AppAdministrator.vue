@@ -5,7 +5,10 @@
         <transition name="slide-fade">
             <div v-if="showMenu"
                  id="menu-side-administrador"
-                 class="pt-5 pl-3 pb-5" >
+                 class="pt-4 pl-3 pb-5" >
+                <div class="mb-4">
+                    <img src="images/logo-admin.png" alt="logo-admin" height="30px">
+                </div>
                 <router-link v-for="(menuItem, i) in listMenu"
                      :key="i"
                     class="row w-100 pt-2 pb-2"
@@ -89,7 +92,7 @@
         background-color: white;
         border-left: solid 10px midnightblue;
         box-sizing: border-box;
-        overflow-y: scroll;
+        /*overflow-y: scroll;*/
         z-index: 999;
     }
 

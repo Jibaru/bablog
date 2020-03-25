@@ -15,7 +15,9 @@
                 <router-view></router-view>
             </div>
         @else
-            <div >No puedes acceder a este sitio</div>
+            <div class="container h-100 pt-5">
+                <div class="alert alert-warning text-center">No puedes acceder a este sitio</div>
+            </div>
         @endif
     @endif
 

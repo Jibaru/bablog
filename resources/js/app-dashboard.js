@@ -1,5 +1,5 @@
 import VueRouter from 'vue-router'
-import {TweenMax, Power2, TimelineLite} from "gsap";
+import Moment from 'moment';
 import routes from "./routers/dashboard";
 import * as Alerts from "./utils/alerts";
 import JQueryDataTableES from "./translations/jquery-datatable-es";
@@ -11,7 +11,7 @@ require('vue-multiselect');
 window.Vue = require('vue');
 window.Alerts = Alerts;
 window.JQueryDataTableES = JQueryDataTableES;
-
+window.moment = Moment;
 
 Vue.use(VueRouter);
 

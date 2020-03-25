@@ -5,7 +5,7 @@
          role="dialog"
          :aria-labelledby="`modal-${id}-title`"
          aria-hidden="true">
-        <div class="modal-dialog"
+        <div :class="`modal-dialog ${customClasses}`"
              role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -36,6 +36,10 @@
             title: {
                 type: String,
                 default: 'Título'
+            },
+            customClasses: {
+                type: String,
+                default: ''
             }
         },
         methods: {
@@ -49,3 +53,16 @@
     }
 
 </script>
+
+<style>
+
+    .post-modal {
+        max-width: 75%;
+    }
+
+    @media only screen and (max-width: 767px) {
+        .post-modal {
+            max-width: 100%;
+        }
+    }
+</style>

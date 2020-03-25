@@ -15,7 +15,12 @@ class Post extends Model
             'title',
             'date_time',
             'type',
-            'content'
+            'description',
+            'card_type',
+            'content',
+            'user_id',
+            'category_id',
+            'file_id'
         ];
 
     protected $hidden =
@@ -64,9 +69,9 @@ class Post extends Model
         return $this->hasMany(PostView::class)->with('user');
     }
 
-    public function frontImage()
+    public function file()
     {
-        return $this->hasOne(PostImage::class)->with('file');
+        return $this->belongsTo(File::class, 'file_id');
     }
 
     public function getCommentsCountAttribute()

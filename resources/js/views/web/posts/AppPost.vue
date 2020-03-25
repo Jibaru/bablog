@@ -159,17 +159,14 @@
                     comments: [],
                     likes: [],
                     views: [],
-                    frontImage: {
+                    file: {
                         id: undefined,
-                        file: {
-                            id: undefined,
-                            name: '',
-                            format: '',
-                            path: '',
-                            type: '',
-                            url: ''
-                        }
-                    },
+                        name: '',
+                        format: '',
+                        path: '',
+                        type: '',
+                        url: ''
+                    }
                 }
             }
         },

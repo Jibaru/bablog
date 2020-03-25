@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Response;
+use App\File as FileModel;
 
 class FileController extends Controller
 {
@@ -17,7 +18,7 @@ class FileController extends Controller
      */
     public function index()
     {
-        //
+        return FileModel::all();
     }
 
     /**
@@ -38,7 +39,7 @@ class FileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return FileModel::create($request->all());
     }
 
     /**
@@ -49,7 +50,7 @@ class FileController extends Controller
      */
     public function show($id)
     {
-        //
+        return FileModel::find($id);
     }
 
     /**
@@ -72,7 +73,7 @@ class FileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return FileModel::find($id)->update($request->all());
     }
 
     /**
@@ -83,7 +84,7 @@ class FileController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return FileModel::find($id)->delete();
     }
 
     public function viewFile($folder, $filename)

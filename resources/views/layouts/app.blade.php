@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>BaBlog Administrador</title>
 
     <link href="css/app.css" rel="stylesheet">
     <link href="common-css/ionicons.css" rel="stylesheet">
@@ -17,7 +17,7 @@
         <nav class="navbar navbar-expand-md navbar-white bg-white shadow-sm">
             <div class="container-fluid">
                 <a class="navbar-brand ml-4 " href="{{ url('/administrador') }}">
-                    BaBlog Administrador
+                    <img src="images/logo-admin.png" alt="logo-admin" height="30px">
                 </a>
 
                 <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -38,13 +38,8 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar Sesión') }}</a>
-                        </li>
+
                         @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
-                        </li>
                         @endif
                         @else
                         <li class="nav-item dropdown">

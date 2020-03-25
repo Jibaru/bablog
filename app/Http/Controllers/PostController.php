@@ -14,7 +14,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return Post::with(['user','category', 'comments', 'likes', 'views', 'frontImage'])->get();
+        return Post::with(['user','category', 'comments', 'likes', 'views', 'file'])->get();
     }
 
     /**
@@ -35,7 +35,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return Post::create($request->all());
     }
 
     /**
@@ -46,7 +46,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        return Post::with(['user','category', 'comments', 'likes', 'views', 'frontImage'])->get()->find($id);
+        return Post::with(['user','category', 'comments', 'likes', 'views', 'file'])->get()->find($id);
     }
 
     /**
@@ -69,7 +69,7 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return Post::find($id)->update($request->all());
     }
 
     /**
@@ -80,12 +80,12 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return Post::find($id)->delete();
     }
 
     public function front(Request $request)
     {
-        return Post::with(['user','category','frontImage'])
+        return Post::with(['user','category','file'])
             ->when($request->input('category_id'), function($query) use ($request){
                 return $query->where('category_id', '=', $request->input('category_id'));
             })

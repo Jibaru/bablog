@@ -21,6 +21,15 @@ export default [
         component: require('../views/administrator/categories/AppCategory').default,
         props: true,
     },
-
+    {
+        path: '/archivos',
+        component: require('../views/administrator/files/AppFile').default,
+        props: true,
+    },
+    {
+        path: '/posts',
+        component: require('../views/administrator/posts/AppPost').default,
+        props: true,
+    },
 
 ]

@@ -3,12 +3,12 @@
         <div class="card h-100">
             <div v-if="post" class="single-post post-style-2">
 
-                <div class="blog-image"><img :src="post.frontImage.file.url" alt="Blog Image"></div>
+                <div class="blog-image"><img :src="post.file.url" alt="Blog Image"></div>
 
                 <div class="blog-info">
 
                     <h6 class="pre-title">
-                        <a href="#">
+                        <a href="javacript:void(0);">
                             <b>{{post.category.name}}</b>
                         </a>
                     </h6>

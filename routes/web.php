@@ -31,5 +31,7 @@ Route::resource('/posts', 'PostController');
 Route::get('/front-posts', 'PostController@front');
 Route::resource('/comments', 'CommentController');
 Route::resource('/posts-views', 'PostViewController');
+Route::resource('/files', 'FileController');
+Route::get('/comments-by-post-id/{id}', 'CommentController@getByPostId');
 
 Route::get('/insert-all', 'DBImportController@insertAll');

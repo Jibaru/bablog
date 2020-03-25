@@ -31,6 +31,11 @@ class CreatePostsTable extends Migration
                 ->references('id')
                 ->on('categories')
                 ->onDelete('cascade');
+            $table->unsignedBigInteger('file_id')->nullable(true);
+            $table->foreign('file_id')
+                ->references('id')
+                ->on('files')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

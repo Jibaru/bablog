@@ -92,4 +92,12 @@ class CommentController extends Controller
     {
         //
     }
+
+    public function getByPostId($id)
+    {
+        return Comment::where('post_id', '=', $id)
+            ->where('thread', '=', null)
+            ->orderBy('created_at', 'desc')
+            ->with('user')->get()->find($id);
+    }
 }
