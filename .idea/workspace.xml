@@ -2,42 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5f8f9b1-cecb-41a8-b0cf-ee05995b37a4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/views/administrator/files/AppFile.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/views/administrator/files/FormFile.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/views/administrator/files/TableFile.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/views/administrator/posts/AppPost.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/views/administrator/posts/FormPost.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/views/administrator/posts/TablePost.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/File.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/File.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CommentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DBImportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DBImportController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostImageController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/PostImage.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_16_224947_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_16_224947_create_posts_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_19_023005_create_posts_images_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/files/images/avatar-default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/files-storage/images/avatar-default.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/files/images/image_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/files-storage/images/image_1.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app-dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app-dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app-dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app-dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/AppModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/AppModal.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/BigPostCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/BigPostCard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/PostCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/PostCard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/routers/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/routers/dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/views/administrator/AppAdministrator.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/administrator/AppAdministrator.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/views/administrator/users/FormUser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/administrator/users/FormUser.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/views/web/home/AppHomeAdministrator.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/web/home/AppHomeAdministrator.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/views/web/posts/AppPost.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/web/posts/AppPost.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/views/web/posts/SelectorPost.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/web/posts/SelectorPost.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/AppMultiselect.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/AppMultiselect.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/administrator/posts/FormPost.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/administrator/posts/FormPost.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/web/posts/SidebarPost.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/web/posts/SidebarPost.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,50 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Post.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/views/web/home/AppHomeAdministrator.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="68" selection-start-line="4" selection-start-column="68" selection-end-line="4" selection-end-column="68" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="61" column="95" selection-start-line="61" selection-start-column="95" selection-end-line="61" selection-end-column="95" />
-              <folding>
-                <element signature="n#style#0;n#button#0;n#div#0;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DBImportController.php">
+        <entry file="file://$PROJECT_DIR$/resources/js/views/administrator/posts/FormPost.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="94" column="112" lean-forward="true" selection-start-line="94" selection-start-column="112" selection-end-line="94" selection-end-column="112" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="34" column="37" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+            <state relative-caret-position="142">
+              <caret line="205" column="17" lean-forward="true" selection-start-line="205" selection-start-column="17" selection-end-line="205" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -123,6 +53,7 @@
       <find>.column.is-offset-4-tablet</find>
       <find>.column.is-4-tablet</find>
       <find>main-menu</find>
+      <find>console</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -131,7 +62,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
         <option value="$PROJECT_DIR$/resources/js/views/users/AppUser.vue" />
         <option value="$PROJECT_DIR$/resources/js/views/home/AppHomeAdministrator.vue" />
@@ -140,7 +70,6 @@
         <option value="$PROJECT_DIR$/public/jquery/css/dataTables.bootstrap4.min.css" />
         <option value="$PROJECT_DIR$/public/jquery/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/resources/sass/app.scss" />
-        <option value="$PROJECT_DIR$/resources/js/components/AppMultiselect.vue" />
         <option value="$PROJECT_DIR$/resources/js/translations/jquery-datatable-es.js" />
         <option value="$PROJECT_DIR$/resources/js/views/roles/FormRole.vue" />
         <option value="$PROJECT_DIR$/resources/js/views/roles/AppRole.vue" />
@@ -169,7 +98,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/PostController.php" />
         <option value="$PROJECT_DIR$/app/Post.php" />
         <option value="$PROJECT_DIR$/resources/js/app-dashboard.js" />
-        <option value="$PROJECT_DIR$/resources/js/views/administrator/posts/FormPost.vue" />
         <option value="$PROJECT_DIR$/resources/js/views/administrator/posts/AppPost.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/AppModal.vue" />
         <option value="$PROJECT_DIR$/resources/js/views/administrator/AppAdministrator.vue" />
@@ -182,6 +110,9 @@
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/resources/js/views/web/home/AppHomeAdministrator.vue" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/DBImportController.php" />
+        <option value="$PROJECT_DIR$/resources/js/views/administrator/posts/FormPost.vue" />
+        <option value="$PROJECT_DIR$/resources/js/components/AppMultiselect.vue" />
+        <option value="$PROJECT_DIR$/resources/js/views/web/posts/SidebarPost.vue" />
       </list>
     </option>
   </component>
@@ -295,8 +226,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -364,6 +293,23 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="administrator" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sistemas-archivos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sistemas-archivos" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="administrator" type="462c0819:PsiDirectoryNode" />
+              <item name="posts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sistemas-archivos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sistemas-archivos" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -373,7 +319,7 @@
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
+              <item name="posts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sistemas-archivos" type="b2602c69:ProjectViewProjectNode" />
@@ -404,13 +350,15 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1585125312232" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1585155716529" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -475,12 +423,13 @@
       <workItem from="1585011858354" duration="8596000" />
       <workItem from="1585070157817" duration="4561000" />
       <workItem from="1585094839158" duration="9115000" />
-      <workItem from="1585116557693" duration="8703000" />
+      <workItem from="1585116557693" duration="8926000" />
+      <workItem from="1585153703865" duration="1983000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116943000" />
+    <option name="totallyTimeSpent" value="119149000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -495,7 +444,7 @@
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2193646" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22239032" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -510,7 +459,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32850242" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.18518518" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.2657005" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.4009662" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
@@ -559,8 +508,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/js/views/administrator/categories/TableRole.vue" />
-    <entry file="file://$PROJECT_DIR$/resources/js/views/administrator/categories/AppRole.vue" />
     <entry file="file://$PROJECT_DIR$/resources/js/views/administrator/categories/TableCategory.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
@@ -647,18 +594,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PostImageController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-408" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/PostImage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PostImageController.php" />
+    <entry file="file://$PROJECT_DIR$/app/PostImage.php" />
     <entry file="file://$PROJECT_DIR$/app/File.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -686,11 +623,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/views/web/posts/CenteredPost.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1275" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/views/web/posts/Post.vue">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -705,13 +637,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-321">
           <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/AppMultiselect.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="72" column="22" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -754,13 +679,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1207">
           <caret line="72" column="5" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/views/administrator/posts/FormPost.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -860,16 +778,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="61" column="95" selection-start-line="61" selection-start-column="95" selection-end-line="61" selection-end-column="95" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="618">
@@ -887,10 +795,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Post.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DBImportController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+        <state relative-caret-position="886">
+          <caret line="96" column="7" lean-forward="true" selection-start-line="96" selection-start-column="7" selection-end-line="96" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="61" column="95" selection-start-line="61" selection-start-column="95" selection-end-line="61" selection-end-column="95" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -901,10 +819,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DBImportController.php">
+    <entry file="file://$PROJECT_DIR$/app/Post.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="94" column="112" lean-forward="true" selection-start-line="94" selection-start-column="112" selection-end-line="94" selection-end-column="112" />
+        <state relative-caret-position="255">
+          <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/views/web/posts/CenteredPost.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="36" column="97" lean-forward="true" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/views/web/posts/LandingPost.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/components/AppMultiselect.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="106" column="35" selection-start-line="106" selection-start-column="28" selection-end-line="106" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/views/web/posts/SidebarPost.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="108" column="23" selection-start-line="108" selection-start-column="16" selection-end-line="108" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/views/administrator/posts/FormPost.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="205" column="17" lean-forward="true" selection-start-line="205" selection-start-column="17" selection-end-line="205" selection-end-column="17" />
         </state>
       </provider>
     </entry>

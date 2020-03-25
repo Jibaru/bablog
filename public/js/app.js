@@ -4380,21 +4380,20 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               case 6:
                 response = _context2.sent;
-                console.log(response);
-                _context2.next = 13;
+                _context2.next = 12;
                 break;
 
-              case 10:
-                _context2.prev = 10;
+              case 9:
+                _context2.prev = 9;
                 _context2.t0 = _context2["catch"](0);
                 console.log(_context2.t0);
 
-              case 13:
+              case 12:
               case "end":
                 return _context2.stop();
             }
           }
-        }, _callee2, null, [[0, 10]]);
+        }, _callee2, null, [[0, 9]]);
       }))();
     },
     getAuth: function getAuth() {
@@ -4412,7 +4411,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               case 3:
                 response = _context3.sent;
-                console.log(response);
 
                 if (response.status === 200) {
                   if (response.data !== '' && response.data !== undefined) {
@@ -4422,20 +4420,20 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   }
                 }
 
-                _context3.next = 11;
+                _context3.next = 10;
                 break;
 
-              case 8:
-                _context3.prev = 8;
+              case 7:
+                _context3.prev = 7;
                 _context3.t0 = _context3["catch"](0);
                 console.log(_context3.t0);
 
-              case 11:
+              case 10:
               case "end":
                 return _context3.stop();
             }
           }
-        }, _callee3, null, [[0, 8]]);
+        }, _callee3, null, [[0, 7]]);
       }))();
     }
   },

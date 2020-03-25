@@ -71,7 +71,19 @@
             </div>
             <div class="form-group">
                 <label>CONTENIDO</label>
+                <div>
+                    <button @click="addToContent(contentA)"
+                            type="button"
+                            class="btn btn-sm btn-primary">P Top Area (Centered)</button>
+                    <button @click="addToContent(contentC)"
+                            type="button"
+                            class="btn btn-sm btn-primary">P Normal</button>
+                    <button @click="addToContent(contentB)"
+                            type="button"
+                            class="btn btn-sm btn-primary">Post Image</button>
+                </div>
                 <textarea v-model="post.content"
+                          id="post-content"
                           class="form-control"
                           rows="10"
                           required>
@@ -140,7 +152,10 @@
                         id: 'BIG',
                         name: 'GRANDE'
                     },
-                ]
+                ],
+                contentA: '<div class="post-top-area"><p class="para">[]</p></div>',
+                contentB: '<div class="post-image"><img src="[]" alt="BaBlogImage"></div>',
+                contentC: '<p class="para">[]</p>',
             }
         },
         methods: {
@@ -215,6 +230,21 @@
 
                 } catch (e) {
                     console.log(e);
+                }
+            },
+            addToContent(tagsHTML){
+                const cursorStart = $('#post-content').prop("selectionStart");
+                const cursorEnd = $('#post-content').prop("selectionEnd");
+                if(cursorStart === 0 && cursorEnd === 0){
+                    this.post.content += tagsHTML.replace('[]', '');
+                }else if((cursorStart === 0 && cursorEnd !== 0 ||cursorStart !== 0 && cursorEnd !== 0)
+                        && (cursorStart !== cursorEnd)){
+                    const selection = this.post.content.substring(cursorStart, cursorEnd);
+                    const newText = tagsHTML.replace('[]', selection);
+                    this.post.content = this.post.content.replace(selection, newText);
+                }else if(cursorStart !== 0 && cursorEnd !== 0 && cursorStart === cursorEnd){
+                    this.post.content = this.post.content.substring(0, cursorStart)
+                        + tagsHTML.replace('[]', '') + this.post.content.substring(cursorEnd, this.post.content.length);
                 }
             },
             checkForm(){

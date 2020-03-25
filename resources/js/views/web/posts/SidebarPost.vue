@@ -118,7 +118,6 @@
 
                     const response = await axios.post('/posts-views', body);
 
-                    console.log(response);
                 }catch(e){
                     console.log(e);
                 }
@@ -126,8 +125,6 @@
             async getAuth(){
                 try {
                     const response = await axios.get('/auth');
-
-                    console.log(response);
 
                     if(response.status === 200){
                         if(response.data !== '' && response.data !== undefined){

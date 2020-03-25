@@ -117,7 +117,6 @@
                 }
             },
             sendSelectedOptions(value){
-                console.log(value);
                 if(value !== null){
                     if(this.singleValueAsObject){
                         if(value.length <= 1){

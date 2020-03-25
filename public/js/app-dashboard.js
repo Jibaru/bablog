@@ -2107,8 +2107,6 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     sendSelectedOptions: function sendSelectedOptions(value) {
-      console.log(value);
-
       if (value !== null) {
         if (this.singleValueAsObject) {
           if (value.length <= 1) {
@@ -3542,6 +3540,18 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -3581,7 +3591,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }, {
         id: 'BIG',
         name: 'GRANDE'
-      }]
+      }],
+      contentA: '<div class="post-top-area"><p class="para">[]</p></div>',
+      contentB: '<div class="post-image"><img src="[]" alt="BaBlogImage"></div>',
+      contentC: '<p class="para">[]</p>'
     };
   },
   methods: {
@@ -3726,6 +3739,20 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           }
         }, _callee3, null, [[0, 17]]);
       }))();
+    },
+    addToContent: function addToContent(tagsHTML) {
+      var cursorStart = $('#post-content').prop("selectionStart");
+      var cursorEnd = $('#post-content').prop("selectionEnd");
+
+      if (cursorStart === 0 && cursorEnd === 0) {
+        this.post.content += tagsHTML.replace('[]', '');
+      } else if ((cursorStart === 0 && cursorEnd !== 0 || cursorStart !== 0 && cursorEnd !== 0) && cursorStart !== cursorEnd) {
+        var selection = this.post.content.substring(cursorStart, cursorEnd);
+        var newText = tagsHTML.replace('[]', selection);
+        this.post.content = this.post.content.replace(selection, newText);
+      } else if (cursorStart !== 0 && cursorEnd !== 0 && cursorStart === cursorEnd) {
+        this.post.content = this.post.content.substring(0, cursorStart) + tagsHTML.replace('[]', '') + this.post.content.substring(cursorEnd, this.post.content.length);
+      }
     },
     checkForm: function checkForm() {
       if (this.isEditing) {
@@ -79130,6 +79157,50 @@ var render = function() {
         _c("div", { staticClass: "form-group" }, [
           _c("label", [_vm._v("CONTENIDO")]),
           _vm._v(" "),
+          _c("div", [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-sm btn-primary",
+                attrs: { type: "button" },
+                on: {
+                  click: function($event) {
+                    return _vm.addToContent(_vm.contentA)
+                  }
+                }
+              },
+              [_vm._v("P Top Area (Centered)")]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-sm btn-primary",
+                attrs: { type: "button" },
+                on: {
+                  click: function($event) {
+                    return _vm.addToContent(_vm.contentC)
+                  }
+                }
+              },
+              [_vm._v("P Normal")]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-sm btn-primary",
+                attrs: { type: "button" },
+                on: {
+                  click: function($event) {
+                    return _vm.addToContent(_vm.contentB)
+                  }
+                }
+              },
+              [_vm._v("Post Image")]
+            )
+          ]),
+          _vm._v(" "),
           _c("textarea", {
             directives: [
               {
@@ -79140,7 +79211,7 @@ var render = function() {
               }
             ],
             staticClass: "form-control",
-            attrs: { rows: "10", required: "" },
+            attrs: { id: "post-content", rows: "10", required: "" },
             domProps: { value: _vm.post.content },
             on: {
               input: function($event) {
