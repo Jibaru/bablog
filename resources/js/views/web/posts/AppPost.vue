@@ -97,11 +97,11 @@
 
 <script>
 
-    import Sidebar from '../../components/Sidebar';
-    import SelectorPost from '../posts/SelectorPost';
-    import CommentSection from '../../components/CommentSection';
-    import RecommendSection from '../../components/RecommendSection';
-    import Transformers from '../../utils/transformers';
+    import Sidebar from '../../../components/Sidebar';
+    import SelectorPost from './SelectorPost';
+    import CommentSection from '../../../components/CommentSection';
+    import RecommendSection from '../../../components/RecommendSection';
+    import Transformers from '../../../utils/transformers';
 
     export default {
         props: {

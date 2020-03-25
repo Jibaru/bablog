@@ -81,7 +81,20 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+
+        $user->name = $request->input('name');
+        $user->role_id = $request->input('role_id');
+        $user->file_id = $request->input('file_id') ? $request->input('file_id') : 2;
+        $user->email = $request->input('email');
+
+        if($request->input('password')){
+            $user->password = Hash::make($request->input('password'));
+        }
+
+        $user->save();
+
+        return $user;
     }
 
     /**

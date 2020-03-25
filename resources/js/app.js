@@ -8,7 +8,7 @@ window.moment = Moment;
 
 Vue.component(
     'app-home',
-    require('./views/home/AppHome.vue').default
+    require('./views/web/home/AppHome.vue').default
 );
 
 Vue.component(

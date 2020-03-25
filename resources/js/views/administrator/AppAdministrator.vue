@@ -10,6 +10,7 @@
                      :key="i"
                     class="row w-100 pt-2 pb-2"
                     :to="menuItem.path"
+                    @click.native="showMenu = false"
                     style="font-size: 17px;
                     background-color: #F3F1F0;
                     margin-bottom: 10px;
@@ -41,9 +42,19 @@
                 showMenu: false,
                 listMenu: [
                     {
+                        name: 'Inicio',
+                        icon: 'icon ion-settings',
+                        path: '/'
+                    },
+                    {
                         name: 'Roles',
                         icon: 'icon ion-settings',
                         path: '/roles'
+                    },
+                    {
+                        name: 'Categorías',
+                        icon: 'icon ion-settings',
+                        path: '/categorias'
                     },
                     {
                         name: 'Usuarios',

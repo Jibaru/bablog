@@ -31,10 +31,10 @@
 
 <script>
 
-    import PostCard from '../../components/PostCard';
-    import BigPostCard from '../../components/BigPostCard';
-    import TinyPostCard from '../../components/TinyPostCard';
-    import Transformers from '../../utils/transformers';
+    import PostCard from '../../../components/PostCard';
+    import BigPostCard from '../../../components/BigPostCard';
+    import TinyPostCard from '../../../components/TinyPostCard';
+    import Transformers from '../../../utils/transformers';
 
     export default {
         components: {

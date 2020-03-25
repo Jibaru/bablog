@@ -22,7 +22,7 @@
     import SidebarPost from './SidebarPost';
     import CenteredPost from './CenteredPost';
     import LandingPost from './LandingPost';
-    import Transformers from '../../utils/transformers';
+    import Transformers from '../../../utils/transformers';
 
     export default {
         components: {

@@ -1,12 +1,19 @@
 <template>
+
     <div>
-        <div class="slider"></div>
-        <section class="blog-area section">
+        <div class="slider display-table center-text">
+            <h1 class="title display-table-cell"><b>{{title}}</b></h1>
+        </div>
+        <section
+            :class="{
+                'blog-area': !$route.path.includes('/posts/'),
+                'post-area': $route.path.includes('/posts/'),
+                'section': true, }">
             <div class="container">
 
                 <div class="row">
                     <div class="col-lg-8 colmd-12">
-                        <list-post route="posts" @on-loaded="checkPosts"></list-post>
+                        <router-view @on-loaded="checkPosts"></router-view>
                         <a v-if="hasPosts" class="load-more-btn" href="#"><b>CARGAR MÁS</b></a>
                         <div v-if="!hasPosts" class="text-center card pt-3 pb-3" ><b>Sin posts en esta categoría</b></div>
                     </div>
@@ -18,16 +25,24 @@
             </div>
         </section>
     </div>
+
 </template>
+
 <script>
 
-    import Sidebar from '../../components/Sidebar';
-    import ListPost from '../posts/ListPost';
+    import Sidebar from '../../../components/Sidebar';
 
     export default {
+        props: {
+            category: {
+                type: String | Number,
+            },
+            title: {
+                type: String
+            }
+        },
         components: {
-            'sidebar': Sidebar,
-            'list-post': ListPost
+            'sidebar': Sidebar
         },
         data(){
             return {
@@ -45,4 +60,5 @@
             }
         },
     }
+
 </script>

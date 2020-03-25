@@ -3,9 +3,16 @@
     <div>
 
         <div class="card">
-            <h5 class="card-header">
-                Lista de Roles
-            </h5>
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-9">
+                        <h5>Lista de Roles</h5>
+                    </div>
+                    <div class="col-3">
+                        <slot name="buttons"></slot>
+                    </div>
+                </div>
+            </div>
             <div class="card-body">
                 <table id="role-table" class="table table-striped table-bordered responsive nowrap" style="width:100%">
                     <thead>
@@ -37,14 +44,20 @@
             }
         },
         methods: {
-
+            async refreshTable(){
+                const roles = await this.getRoles();
+                this.roleTable.clear().draw();
+                this.roleTable.rows.add(this.roles); // Add new data
+                this.roleTable.columns.adjust().draw();
+            },
             async getRoles(){
                 try {
                     const response = await axios.get('/roles');
 
-                    this.roles = response.data;
-
-                    return response.data;
+                    if(response.status === 200){
+                        this.roles = response.data;
+                        return response.data;
+                    }
 
                 } catch (e){
 
@@ -55,6 +68,21 @@
             async loadTable(){
                 const roles = await this.getRoles();
                 this.renderTable(this.roles);
+            },
+            async deleteRole(id){
+                try {
+                    const response = await axios.delete(`/roles/${id}`);
+
+                    if(response.status === 200){
+                        const value = await Alerts.showDeletedMessage();
+
+                        this.refreshTable();
+                    }
+
+
+                } catch(e) {
+                    console.log(e);
+                }
             },
             renderTable(roles){
                 console.log($('#role-table'));
@@ -76,23 +104,18 @@
                                                     data-toggle="dropdown"
                                                     aria-haspopup="true"
                                                     aria-expanded="false">
-                                                <i class="fas fa-bars"></i>
+                                                    <i class="icon ion-settings"></i>
                                             </button>
                                             <div class="dropdown-menu dropdown-menu-right">
                                                 <button type="button"
-                                                        class="dropdown-item btn-egress-update"
+                                                        class="dropdown-item btn-role-update"
                                                         data-id="${data}">
-                                                        <i class='fas fa-edit'></i> Editar
+                                                        <i class="icon ion-edit"></i> Editar
                                                 </button>
                                                 <button type="button"
-                                                        class="dropdown-item btn-egress-delete"
+                                                        class="dropdown-item btn-role-delete"
                                                         data-id="${data}">
-                                                        <i class='fas fa-trash-alt'></i> Eliminar
-                                                </button>
-                                                <button type="button"
-                                                        class="dropdown-item btn-egress-view"
-                                                        data-id="${data}">
-                                                        <i class="fas fa-eye"></i> Ver
+                                                        <i class="icon ion-trash-a"></i> Eliminar
                                                 </button>
                                             </div>
                                         </div>
@@ -106,10 +129,37 @@
                     ]
                 });
 
+            },
+            events(){
+
+                const _this = this;
+
+                $(document).on('click', '.btn-role-update', function(e){
+                    e.preventDefault();
+
+                    const roleId = $(this).data('id');
+
+                    _this.$emit('on-click-update', roleId);
+
+                });
+
+                $(document).on('click', '.btn-role-delete', function(e){
+                    e.preventDefault();
+
+                    const roleId = $(this).data('id');
+
+                    Alerts.showConfirmDeleteMessage().then( result => {
+                         if(result.value){
+                             _this.deleteRole(roleId);
+                         }
+                    });
+
+                });
             }
         },
         mounted(){
             this.loadTable();
+            this.events();
         }
     }
 
