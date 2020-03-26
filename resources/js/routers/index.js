@@ -27,10 +27,6 @@ export default [
                     category: '1'
                 }
             },
-            {
-                path: '/tecnologia/posts/:id',
-                component: require('../views/web/posts/Post').default,
-            }
         ]
     },
     {
@@ -48,10 +44,6 @@ export default [
                     category: '2'
                 }
             },
-            {
-                path: '/desarrollo/posts/:id',
-                component: require('../views/web/posts/Post').default,
-            }
         ]
     },
     {
@@ -69,10 +61,6 @@ export default [
                     category: '3'
                 }
             },
-            {
-                path: '/aprendizaje/posts/:id',
-                component: require('../views/web/posts/Post').default,
-            }
         ]
     },
     {

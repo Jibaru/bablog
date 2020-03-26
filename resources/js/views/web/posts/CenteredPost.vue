@@ -50,36 +50,20 @@
                 </ul>
 
                 <div class="post-icons-area">
-                    <ul class="post-icons">
-                        <li>
-                            <a :class="{'icon-gray-jibaru': !post.liked, 'icon-blue-jibaru': post.liked}"
-                               href="javascript:void(0);"
-                               @click="!post.liked ? createLike : null">
-                                <i class="ion-heart"></i>{{post.likesCount}}
-                            </a>
-                        </li>
-                        <li>
-                            <a :class="{'icon-gray-jibaru': post.commentsCount == 0, 'icon-blue-jibaru': post.commentsCount > 0}"
-                               href="javascript:void(0);">
-                                <i class="ion-chatbubble"></i>{{post.commentsCount}}
-                            </a>
-                        </li>
-                        <li><a :class="{'icon-gray-jibaru': !post.viewed, 'icon-blue-jibaru': post.viewed}"
-                               href="javascript:void(0);">
-                            <i class="ion-eye"></i>{{post.viewsCount}}</a>
-                        </li>
-                    </ul>
+                    <icon-information-bar
+                        ref="icon-information-bar"
+                        :post="post"
+                        :user="user"
+                        @on-create-like="$emit('on-create-like')"
+                        @on-delete-like="$emit('on-delete-like')"
+                        @on-create-view="$emit('on-create-view')">
+                    </icon-information-bar>
 
-                    <ul class="icons">
-                        <li>COMPARTIR : </li>
-                        <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                        <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                        <li><a href="#"><i class="ion-social-pinterest"></i></a></li>
-                    </ul>
+                    <share-bar></share-bar>
+
                 </div>
 
                 <div class="post-footer post-info">
-
                     <div class="left-area">
                         <a class="avatar" href="#"><img :src="post.user.file.url" alt="Profile Image"></a>
                     </div>
@@ -88,21 +72,24 @@
                         <a class="name" href="#"><b>{{post.user.name}}</b></a>
                         <h6 class="date">{{post.dateTime}}</h6>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
 
 </template>
 
 <script>
 
+    import ShareBar from './ShareBar';
+    import IconInformationBar from './IconInformationBar';
+
     export default {
         name: 'CenteredPost',
+        components: {
+            'share-bar': ShareBar,
+            'icon-information-bar': IconInformationBar
+        },
         props: {
             post: {
                 type: Object
@@ -116,24 +103,6 @@
             }
         },
         methods: {
-            async createLike(){
-                console.log('leik');
-            },
-            async createView(postId){
-                try {
-
-                    const body = {};
-
-                    body.post_id = postId;
-                    body.user_id = this.user.id;
-
-                    const response = await axios.post('/posts-views', body);
-
-                    console.log(response);
-                }catch(e){
-                    console.log(e);
-                }
-            },
             async getAuth(){
                 try {
                     const response = await axios.get('/auth');
@@ -156,7 +125,7 @@
         mounted(){
             this.getAuth().then((_) => {
                 if(!this.post.viewed && this.user.id !== undefined){
-                    this.createView(this.post.id);
+                    this.$refs['icon-information-bar'].createView(this.post.id);
                 }
             });
         }

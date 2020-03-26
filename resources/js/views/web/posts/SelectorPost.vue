@@ -3,15 +3,24 @@
     <div>
         <sidebar-post
             v-if="post.type === 'SIDEBAR'"
-            :post="post">
+            :post="post"
+            @on-create-like="increaseLikes"
+            @on-delete-like="decreaseLikes"
+            @on-create-view="increaseViews">
         </sidebar-post>
         <centered-post
             v-if="post.type === 'CENTERED'"
-            :post="post">
+            :post="post"
+            @on-create-like="increaseLikes"
+            @on-delete-like="decreaseLikes"
+            @on-create-view="increaseViews">
         </centered-post>
         <landing-post
             v-if="post.type === 'LANDING'"
-            :post="post">
+            :post="post"
+            @on-create-like="increaseLikes"
+            @on-delete-like="decreaseLikes"
+            @on-create-view="increaseViews">
         </landing-post>
     </div>
 
@@ -87,6 +96,20 @@
             }
         },
         methods: {
+            increaseLikes(e){
+                this.post.liked = true;
+                this.post.likesCount += 1;
+                console.log( 'like increase:',this.post.liked);
+            },
+            decreaseLikes(e){
+                this.post.liked = false;
+                this.post.likesCount -= 1;
+                console.log( 'like decrese:',this.post.liked);
+            },
+            increaseViews(e){
+                this.post.viewed = true;
+                this.post.viewsCount += 1;
+            },
             async getPost(id){
                 try {
 

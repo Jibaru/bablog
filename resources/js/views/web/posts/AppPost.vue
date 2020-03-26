@@ -73,6 +73,7 @@
                         'col-md-10': currentType === 'LANDING'
                     }">
                         <selector-post
+                            ref="selector-post"
                             :id="this.id"
                             @on-loaded="updateView">
                         </selector-post>
@@ -86,10 +87,10 @@
 
             </div>
         </section>
-        <recommend-section></recommend-section>
+        <!--<recommend-section></recommend-section>-->
         <comment-section
             :post="currentPost"
-            @on-comment="updateView">
+            @on-comment="updateViewWithComments">
         </comment-section>
     </div>
 
@@ -174,6 +175,10 @@
             updateView(post){
                 this.currentType = post.type;
                 Transformers.massiveAssignment(post, this.currentPost);
+            },
+            updateViewWithComments(post){
+                this.updateView(post);
+                this.$refs['selector-post'].post.commentsCount += 1;
             }
         },
         mounted(){

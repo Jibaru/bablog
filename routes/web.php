@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('web.home');
 });
 
 Auth::routes();
@@ -31,6 +31,8 @@ Route::resource('/posts', 'PostController');
 Route::get('/front-posts', 'PostController@front');
 Route::resource('/comments', 'CommentController');
 Route::resource('/posts-views', 'PostViewController');
+Route::resource('/posts-likes', 'PostLikeController');
+Route::post('/delete-likes-by-post-user', 'PostLikeController@destroyByPostUser');
 Route::resource('/files', 'FileController');
 Route::get('/comments-by-post-id/{id}', 'CommentController@getByPostId');
 
