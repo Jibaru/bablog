@@ -1,7 +1,8 @@
 <template>
 
     <div>
-        <section class="comment-section" style="background: #EDF3F3">
+        <!--style="background: #EDF3F3"-->
+        <section class="comment-section pt-5" >
             <div class="container">
                 <h4><b>ESCRIBE UN COMENTARIO</b></h4>
                 <div class="row">
@@ -150,8 +151,8 @@
                             </div>
                         </div>
 
-                        <a class="more-comment-btn" href="#"><b>CARGAR MÁS COMENTARIOS</b></a>
-
+                        <a v-if="post.commentsCount > 0" class="more-comment-btn" href="#"><b>CARGAR MÁS COMENTARIOS</b></a>
+                        <div v-else class="alert alert-light border text-center">Sin comentarios</div>
                     </div>
 
                 </div>

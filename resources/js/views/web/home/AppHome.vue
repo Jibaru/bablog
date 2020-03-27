@@ -38,7 +38,6 @@
             checkPosts(posts){
                 if(posts.length > 0){
                     this.hasPosts = true;
-                    console.log('hasPosts', this.hasPosts);
                 } else{
                     this.hasPosts = false;
                 }

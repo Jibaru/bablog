@@ -134,7 +134,7 @@
                     email: '',
                     password: '',
                     role: {
-                        id: 2
+                        id: 3
                     }
                 }
             }

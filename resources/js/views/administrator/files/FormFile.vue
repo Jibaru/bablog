@@ -30,6 +30,16 @@
                        class="form-control text-uppercase"
                        required>
             </div>
+            <div class="form-group">
+                <app-multiselect
+                    v-model="file.local"
+                    label="LOCAL"
+                    placeholder="SELECCIONE"
+                    :optionList="statusList"
+                    :single-value-as-object="true"
+                    required>
+                </app-multiselect>
+            </div>
             <div v-if="file.url" class="form-group alert alert-success text-center">
                 <a :href="file.url" target="_blank">VER ARCHIVO</a>
             </div>
@@ -48,7 +58,12 @@
 </template>
 <script>
 
+    import AppMultiselect from '../../../components/AppMultiselect';
+
     export default {
+        components: {
+            'app-multiselect': AppMultiselect
+        },
         data(){
             return {
                 file: {
@@ -57,8 +72,19 @@
                     path: '',
                     url: '',
                     format: '',
-                    type: ''
+                    type: '',
+                    local: undefined
                 },
+                statusList: [
+                    {
+                        id: 0,
+                        name: 'NO'
+                    },
+                    {
+                        id: 1,
+                        name: 'SI'
+                    },
+                ],
                 isEditing: false
             }
         },
@@ -73,6 +99,7 @@
                     this.file.format = response.data.format;
                     this.file.url = response.data.url;
                     this.file.type = response.data.type;
+                    this.file.local = this.statusList.find( s => s.id === response.data.local);
 
                     return response.data;
                 } catch (e) {
@@ -88,6 +115,7 @@
                     body.path = this.file.path;
                     body.format = this.file.format.toUpperCase();
                     body.type = this.file.type.toUpperCase();
+                    body.local = this.file.local.id;
 
                     const response = await axios.post('files', body);
 
@@ -109,6 +137,7 @@
                     body.path = this.file.path;
                     body.format = this.file.format.toUpperCase();
                     body.type = this.file.type.toUpperCase();
+                    body.local = this.file.local.id;
 
                     const response = await axios.put(`files/${this.file.id}`, body);
 
@@ -136,6 +165,7 @@
                 this.file.path = '';
                 this.file.format = '';
                 this.file.url = '';
+                this.file.local = undefined;
             }
         }
     }

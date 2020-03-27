@@ -6,6 +6,17 @@
 
                 <a href="/#/" class="logo"><img src="images/logo.png" alt="Logo Image"></a>
 
+                <div v-if="user.id" class="user-avatar-navbar" @click="displayUserMenu = !displayUserMenu">
+                    <a href="#" class="avatar" >
+                        <img :src="user.file.url" alt="Profile Image">
+                    </a>
+                </div>
+                <div v-else class="user-login-navbar">
+                    <a href="/#/login" class="avatar" >
+                        Iniciar Sesión
+                    </a>
+                </div>
+
                 <div class="menu-nav-icon" data-nav-menu="#main-menu"><i class="ion-navicon"></i></div>
 
                 <ul class="main-menu visible-on-click" id="main-menu">
@@ -24,16 +35,7 @@
                     <!--<li><a href="#">Otros</a></li>-->
                 </ul>
 
-                <div v-if="user.id" class="user-avatar-navbar" @click="displayUserMenu = !displayUserMenu">
-                    <a href="#" class="avatar" >
-                        <img :src="user.file.url" alt="Profile Image">
-                    </a>
-                </div>
-                <div v-else class="user-login-navbar">
-                    <a href="/#/login" class="avatar" >
-                        Iniciar Sesión
-                    </a>
-                </div>
+
                 <!--<div class="src-area">
                     <form>
                         <button class="src-btn" type="submit"><i class="ion-ios-search-strong"></i></button>
@@ -45,18 +47,18 @@
         </header>
         <transition name="slide-fade">
             <div id="menu-user-navbar"
-                 class="card"
+                 class="card pr-3 pl-3 pb-2 pt-3"
                  v-if="displayUserMenu">
-                <div class="text-right p-3">
+                <div class="text-right">
                     <span style="cursor: pointer" @click="displayUserMenu = false;">X</span>
                 </div>
-                <ul class="list-group">
+                <ul class="list-group" style="font-size: 15px">
                     <li class="p-3">
                         <div class="row">
                             <div class="col-3">
                                 <i class="icon ion-log-out"></i>
                             </div>
-                            <div class="col-9 pt-2">
+                            <div class="col-9 pt-2" style="border-bottom: solid 2px black">
                                 <a href="#" @click="logout">Cerrar Sesión</a>
                             </div>
                         </div>
@@ -129,6 +131,8 @@
         },
         mounted(){
             this.getAuth();
+
+
         },
         created(){
             window.eventBus.$on('on-login', function (data) {
@@ -170,7 +174,7 @@
 
     #menu-user-navbar {
         width: 100%;
-        max-width: 411px;
+        max-width: 300px;
         height: 100%;
         position: fixed;
         top: 0;

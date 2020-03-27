@@ -8,10 +8,7 @@
                 <div v-html="post.content"></div>
 
                 <ul class="tags">
-                    <li><a href="#">Informática</a></li>
-                    <li><a href="#">Programación</a></li>
-                    <li><a href="#">Otros</a></li>
-                    <li><a href="#">Gaaa</a></li>
+                    <li><a :href="`/#/${post.category.name}`">{{post.category.name}}</a></li>
                 </ul>
 
                 <div class="post-icons-area">
@@ -24,7 +21,7 @@
                         @on-create-view="$emit('on-create-view')">
                     </icon-information-bar>
 
-                    <share-bar></share-bar>
+                    <share-bar :to="currentURL"></share-bar>
                 </div>
 
                 <div class="post-footer post-info">
@@ -89,6 +86,9 @@
                     console.log(e);
                 }
             },
+        },
+        computed: {
+            currentURL: () => window.location.toString()
         },
         mounted(){
             this.getAuth().then((_) => {

@@ -90,9 +90,9 @@ class DBImportController extends Controller
 
     public function insertFiles(){
         DB::insert("
-    INSERT INTO files (id, name, format, path, type, created_at, updated_at) VALUES
-(1, 'AVATAR', 'JPG', '/files-storage/images/avatar-default.jpg', 'IMAGEN', '2020-03-18 05:00:00', '2020-03-18 05:00:00'),
-(2, 'VALLE', 'PNG', '/files-storage/images/image_1.jpg', 'IMAGEN', '2020-03-18 05:00:00', '2020-03-18 05:00:00')
+    INSERT INTO files (id, name, format, path, type, local, created_at, updated_at) VALUES
+(1, 'AVATAR', 'JPG', '/files-storage/images/avatar-default.jpg', 'IMAGEN', TRUE, '2020-03-18 05:00:00', '2020-03-18 05:00:00'),
+(2, 'VALLE', 'PNG', '/files-storage/images/image_1.jpg', 'IMAGEN', TRUE,'2020-03-18 05:00:00', '2020-03-18 05:00:00')
 
     ");
     }

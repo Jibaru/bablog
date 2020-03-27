@@ -12,7 +12,7 @@
                 </p>
             </div>
 
-            <div :class="{'sidebar-area': true ,'subscribe-area': true, 'pl-0 pr-0': from === 'POST'}">
+            <!--<div :class="{'sidebar-area': true ,'subscribe-area': true, 'pl-0 pr-0': from === 'POST'}">
 
                 <h4 class="title"><b>SUSCRIBIRSE</b></h4>
                 <div class="input-area">
@@ -22,23 +22,20 @@
                     </form>
                 </div>
 
-            </div>
+            </div>-->
 
             <div :class="{'tag-area': true , 'pl-0 pr-0': from === 'POST'}">
 
                 <h4 class="title"><b>TAGS</b></h4>
                 <ul>
-                    <li><a href="#">Informática</a></li>
-                    <li><a href="#">Tecnología</a></li>
-                    <li><a href="#">Programación</a></li>
-                    <li><a href="#">Aprendizaje</a></li>
-                    <li><a href="#">Siniestra</a></li>
-                    <li><a href="#">Gaaa</a></li>
+                    <li v-for="(category, i) in categories" :key="i">
+                        <a :href="`/#/${category.name.toLowerCase()}`">{{category.name}}</a>
+                    </li>
                 </ul>
 
-            </div><!-- subscribe-area -->
+            </div>
 
-        </div><!-- info-area -->
+        </div>
     </div>
 
 </template>
@@ -51,6 +48,27 @@
                 type: String,
                 default: 'HOME'
             }
+        },
+        data(){
+            return {
+                categories: []
+            }
+        },
+        methods: {
+            async getCategories(){
+                try {
+                    const response = await axios.get('/categories');
+
+                    if(response.status === 200){
+                        this.categories = response.data;
+                    }
+                } catch (e) {
+                    console.log(e);
+                }
+            }
+        },
+        mounted(){
+            this.getCategories();
         }
     }
 

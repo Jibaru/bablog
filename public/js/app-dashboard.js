@@ -2878,6 +2878,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_AppMultiselect__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../components/AppMultiselect */ "./resources/js/components/AppMultiselect.vue");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -2932,7 +2933,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    'app-multiselect': _components_AppMultiselect__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   data: function data() {
     return {
       file: {
@@ -2941,8 +2956,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         path: '',
         url: '',
         format: '',
-        type: ''
+        type: '',
+        local: undefined
       },
+      statusList: [{
+        id: 0,
+        name: 'NO'
+      }, {
+        id: 1,
+        name: 'SI'
+      }],
       isEditing: false
     };
   },
@@ -2968,19 +2991,22 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _this.file.format = response.data.format;
                 _this.file.url = response.data.url;
                 _this.file.type = response.data.type;
+                _this.file.local = _this.statusList.find(function (s) {
+                  return s.id === response.data.local;
+                });
                 return _context.abrupt("return", response.data);
 
-              case 13:
-                _context.prev = 13;
+              case 14:
+                _context.prev = 14;
                 _context.t0 = _context["catch"](0);
                 console.log(_context.t0);
 
-              case 16:
+              case 17:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[0, 13]]);
+        }, _callee, null, [[0, 14]]);
       }))();
     },
     createFile: function createFile() {
@@ -2998,10 +3024,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 body.path = _this2.file.path;
                 body.format = _this2.file.format.toUpperCase();
                 body.type = _this2.file.type.toUpperCase();
-                _context2.next = 8;
+                body.local = _this2.file.local.id;
+                _context2.next = 9;
                 return axios.post('files', body);
 
-              case 8:
+              case 9:
                 response = _context2.sent;
 
                 if (response.status === 201) {
@@ -3010,20 +3037,20 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   _this2.clearForm();
                 }
 
-                _context2.next = 15;
+                _context2.next = 16;
                 break;
 
-              case 12:
-                _context2.prev = 12;
+              case 13:
+                _context2.prev = 13;
                 _context2.t0 = _context2["catch"](0);
                 console.log(_context2.t0);
 
-              case 15:
+              case 16:
               case "end":
                 return _context2.stop();
             }
           }
-        }, _callee2, null, [[0, 12]]);
+        }, _callee2, null, [[0, 13]]);
       }))();
     },
     updateFile: function updateFile() {
@@ -3041,10 +3068,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 body.path = _this3.file.path;
                 body.format = _this3.file.format.toUpperCase();
                 body.type = _this3.file.type.toUpperCase();
-                _context3.next = 8;
+                body.local = _this3.file.local.id;
+                _context3.next = 9;
                 return axios.put("files/".concat(_this3.file.id), body);
 
-              case 8:
+              case 9:
                 response = _context3.sent;
 
                 if (response.status === 200) {
@@ -3055,20 +3083,20 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   _this3.clearForm();
                 }
 
-                _context3.next = 15;
+                _context3.next = 16;
                 break;
 
-              case 12:
-                _context3.prev = 12;
+              case 13:
+                _context3.prev = 13;
                 _context3.t0 = _context3["catch"](0);
                 console.log(_context3.t0);
 
-              case 15:
+              case 16:
               case "end":
                 return _context3.stop();
             }
           }
-        }, _callee3, null, [[0, 12]]);
+        }, _callee3, null, [[0, 13]]);
       }))();
     },
     checkForm: function checkForm() {
@@ -3085,6 +3113,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.file.path = '';
       this.file.format = '';
       this.file.url = '';
+      this.file.local = undefined;
     }
   }
 });
@@ -78746,6 +78775,30 @@ var render = function() {
             }
           })
         ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "form-group" },
+          [
+            _c("app-multiselect", {
+              attrs: {
+                label: "LOCAL",
+                placeholder: "SELECCIONE",
+                optionList: _vm.statusList,
+                "single-value-as-object": true,
+                required: ""
+              },
+              model: {
+                value: _vm.file.local,
+                callback: function($$v) {
+                  _vm.$set(_vm.file, "local", $$v)
+                },
+                expression: "file.local"
+              }
+            })
+          ],
+          1
+        ),
         _vm._v(" "),
         _vm.file.url
           ? _c(
