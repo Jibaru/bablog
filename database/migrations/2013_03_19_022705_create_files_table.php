@@ -19,7 +19,7 @@ class CreateFilesTable extends Migration
             $table->string('format');
             $table->string('path');
             $table->string('type');
-            $table->boolean('local')->default(true);
+            $table->boolean('local')->default(1);
             $table->timestamps();
         });
     }
