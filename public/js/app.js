@@ -2372,39 +2372,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    console.log('Component mounted.');
-  }
-});
-
-/***/ }),
-
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Footerbar.vue?vue&type=script&lang=js&":
 /*!********************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Footerbar.vue?vue&type=script&lang=js& ***!
@@ -3225,6 +3192,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3242,7 +3215,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         role: {
           id: 3
         }
-      }
+      },
+      errorLogin: false,
+      registerSuccesfully: false
     };
   },
   methods: {
@@ -3270,7 +3245,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _this.isLoadingRegister = false;
 
                 if (response.status === 201) {
+                  _this.registerSuccesfully = true;
                   _this.register = false;
+                  setTimeout(function () {
+                    return _this.registerSuccesfully = false;
+                  }, 3000);
                 }
 
                 _context.next = 18;
@@ -3327,15 +3306,22 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   _this2.$router.push('/');
                 }
 
-                _context2.next = 16;
+                _context2.next = 19;
                 break;
 
               case 13:
                 _context2.prev = 13;
                 _context2.t0 = _context2["catch"](1);
-                console.log(_context2.t0);
+                _this2.isLoadingLogin = false;
+                _this2.errorLogin = true;
 
-              case 16:
+                _this2.clearLoginForm();
+
+                setTimeout(function () {
+                  return _this2.errorLogin = false;
+                }, 3000);
+
+              case 19:
               case "end":
                 return _context2.stop();
             }
@@ -59545,53 +59531,6 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&":
-/*!*******************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e& ***!
-  \*******************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Example Component")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an example component.\n                "
-              )
-            ])
-          ])
-        ])
-      ])
-    ])
-  }
-]
-render._withStripped = true
-
-
-
-/***/ }),
-
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Footerbar.vue?vue&type=template&id=79c3babd&":
 /*!************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Footerbar.vue?vue&type=template&id=79c3babd& ***!
@@ -60485,306 +60424,346 @@ var render = function() {
       "div",
       { staticClass: "comment-form row" },
       [
-        _c("div", { staticClass: "col-md-6" }, [
-          _vm._v("\n            AQUÍ IRÁ EL LOGO\n        ")
-        ]),
-        _vm._v(" "),
         _c(
           "transition",
           { attrs: { name: "fade", mode: "out-in", appear: "" } },
           [
             !_vm.register
-              ? _c("div", { key: "login", staticClass: "col-md-6" }, [
-                  _c("h4", { staticClass: "pt-5" }, [
-                    _c("b", [_vm._v("INICIAR SESIÓN")])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "form",
-                    {
-                      attrs: { method: "post" },
-                      on: {
-                        submit: function($event) {
-                          $event.preventDefault()
-                          return _vm.loginUser($event)
+              ? _c(
+                  "div",
+                  {
+                    key: "login",
+                    staticClass: "col-md-8",
+                    staticStyle: { margin: "0 auto" }
+                  },
+                  [
+                    _c("h4", { staticClass: "pt-4" }, [
+                      _c("b", [_vm._v("INICIAR SESIÓN")])
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "form",
+                      {
+                        attrs: { method: "post" },
+                        on: {
+                          submit: function($event) {
+                            $event.preventDefault()
+                            return _vm.loginUser($event)
+                          }
                         }
-                      }
-                    },
-                    [
-                      _c("div", [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.userLogin.email,
-                              expression: "userLogin.email"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          attrs: {
-                            type: "email",
-                            "aria-required": "true",
-                            name: "contact-form-name",
-                            placeholder: "Email",
-                            "aria-invalid": "true",
-                            required: ""
-                          },
-                          domProps: { value: _vm.userLogin.email },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
+                      },
+                      [
+                        _c("div", [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.userLogin.email,
+                                expression: "userLogin.email"
                               }
-                              _vm.$set(
-                                _vm.userLogin,
-                                "email",
-                                $event.target.value
-                              )
-                            }
-                          }
-                        })
-                      ]),
-                      _vm._v(" "),
-                      _c("div", [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.userLogin.password,
-                              expression: "userLogin.password"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          attrs: {
-                            type: "password",
-                            "aria-required": "true",
-                            name: "contact-form-email",
-                            placeholder: "Contraseña",
-                            "aria-invalid": "true",
-                            required: ""
-                          },
-                          domProps: { value: _vm.userLogin.password },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(
-                                _vm.userLogin,
-                                "password",
-                                $event.target.value
-                              )
-                            }
-                          }
-                        })
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "row" }, [
-                        _c("div", { staticClass: "col-md-6 mt-1" }, [
-                          _c(
-                            "button",
-                            {
-                              staticClass: "submit-btn btn-block",
-                              attrs: { type: "submit" }
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              type: "email",
+                              "aria-required": "true",
+                              name: "contact-form-name",
+                              placeholder: "Email",
+                              "aria-invalid": "true",
+                              required: ""
                             },
-                            [
-                              !_vm.isLoadingLogin
-                                ? _c("b", [_vm._v("INGRESAR")])
-                                : _vm._e(),
-                              _vm._v(" "),
-                              _vm.isLoadingLogin
-                                ? _c("b", [_vm._v("CARGANDO...")])
-                                : _vm._e()
-                            ]
-                          )
+                            domProps: { value: _vm.userLogin.email },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.userLogin,
+                                  "email",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
                         ]),
                         _vm._v(" "),
-                        _c("div", { staticClass: "col-md-6 mt-1" }, [
-                          _c(
-                            "button",
-                            {
-                              staticClass: "submit-btn btn-block",
-                              attrs: { type: "button" },
-                              on: {
-                                click: function($event) {
-                                  _vm.register = true
+                        _c("div", [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.userLogin.password,
+                                expression: "userLogin.password"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              type: "password",
+                              "aria-required": "true",
+                              name: "contact-form-email",
+                              placeholder: "Contraseña",
+                              "aria-invalid": "true",
+                              required: ""
+                            },
+                            domProps: { value: _vm.userLogin.password },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
                                 }
+                                _vm.$set(
+                                  _vm.userLogin,
+                                  "password",
+                                  $event.target.value
+                                )
                               }
-                            },
-                            [_c("b", [_vm._v("¿Eres nuevo? REGÍSTRATE")])]
-                          )
-                        ])
-                      ])
-                    ]
-                  )
-                ])
-              : _c("div", { key: "register", staticClass: "col-md-6" }, [
-                  _c("h4", { staticClass: "pt-5" }, [
-                    _c("b", [_vm._v("REGISTRARSE")])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "form",
-                    {
-                      attrs: { method: "post" },
-                      on: {
-                        submit: function($event) {
-                          $event.preventDefault()
-                          return _vm.createUser($event)
-                        }
-                      }
-                    },
-                    [
-                      _c("div", [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.userRegister.name,
-                              expression: "userRegister.name"
                             }
-                          ],
-                          staticClass: "form-control",
-                          attrs: {
-                            type: "text",
-                            "aria-required": "true",
-                            name: "contact-form-name",
-                            placeholder: "Nombre",
-                            "aria-invalid": "true",
-                            required: ""
-                          },
-                          domProps: { value: _vm.userRegister.name },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(
-                                _vm.userRegister,
-                                "name",
-                                $event.target.value
-                              )
-                            }
-                          }
-                        })
-                      ]),
-                      _vm._v(" "),
-                      _c("div", [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.userRegister.email,
-                              expression: "userRegister.email"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          attrs: {
-                            type: "email",
-                            "aria-required": "true",
-                            name: "contact-form-name",
-                            placeholder: "Email",
-                            "aria-invalid": "true",
-                            required: ""
-                          },
-                          domProps: { value: _vm.userRegister.email },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(
-                                _vm.userRegister,
-                                "email",
-                                $event.target.value
-                              )
-                            }
-                          }
-                        })
-                      ]),
-                      _vm._v(" "),
-                      _c("div", [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.userRegister.password,
-                              expression: "userRegister.password"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          attrs: {
-                            type: "password",
-                            "aria-required": "true",
-                            name: "contact-form-email",
-                            placeholder: "Contraseña",
-                            "aria-invalid": "true",
-                            required: ""
-                          },
-                          domProps: { value: _vm.userRegister.password },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(
-                                _vm.userRegister,
-                                "password",
-                                $event.target.value
-                              )
-                            }
-                          }
-                        })
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "row" }, [
-                        _c("div", { staticClass: "col-md-6 mt-1" }, [
-                          _c(
-                            "button",
-                            {
-                              staticClass: "submit-btn btn-block",
-                              attrs: { type: "submit" }
-                            },
-                            [
-                              !_vm.isLoadingRegister
-                                ? _c("b", [_vm._v("REGISTRARSE")])
-                                : _vm._e(),
-                              _vm._v(" "),
-                              _vm.isLoadingRegister
-                                ? _c("b", [_vm._v("CARGANDO...")])
-                                : _vm._e()
-                            ]
-                          )
+                          })
                         ]),
                         _vm._v(" "),
-                        _c("div", { staticClass: "col-md-6 mt-1" }, [
-                          _c(
-                            "button",
-                            {
-                              staticClass: "submit-btn btn-block",
-                              attrs: { type: "button" },
-                              on: {
-                                click: function($event) {
-                                  _vm.register = false
+                        _vm.errorLogin
+                          ? _c(
+                              "div",
+                              { staticClass: "alert alert-danger text-center" },
+                              [
+                                _vm._v(
+                                  "Ingrese datos correctos\n                    "
+                                )
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.registerSuccesfully
+                          ? _c(
+                              "div",
+                              {
+                                staticClass: "alert alert-success text-center"
+                              },
+                              [
+                                _vm._v(
+                                  "Registro correcto. Inicie sesión\n                    "
+                                )
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "row" }, [
+                          _c("div", { staticClass: "col-md-6 mt-1" }, [
+                            _c(
+                              "button",
+                              {
+                                staticClass: "submit-btn btn-block",
+                                attrs: { type: "submit" }
+                              },
+                              [
+                                !_vm.isLoadingLogin
+                                  ? _c("b", [_vm._v("INGRESAR")])
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                _vm.isLoadingLogin
+                                  ? _c("b", [_vm._v("CARGANDO...")])
+                                  : _vm._e()
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col-md-6 mt-1" }, [
+                            _c(
+                              "button",
+                              {
+                                staticClass: "submit-btn btn-block",
+                                attrs: { type: "button" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.register = true
+                                  }
                                 }
-                              }
-                            },
-                            [
-                              _c("b", [
-                                _vm._v("¿Ya tienes una cuenta? INICIAR SESIÓN")
-                              ])
-                            ]
-                          )
+                              },
+                              [_c("b", [_vm._v("¿Eres nuevo? REGÍSTRATE")])]
+                            )
+                          ])
                         ])
-                      ])
-                    ]
-                  )
-                ])
+                      ]
+                    )
+                  ]
+                )
+              : _c(
+                  "div",
+                  {
+                    key: "register",
+                    staticClass: "col-md-8",
+                    staticStyle: { margin: "0 auto" }
+                  },
+                  [
+                    _c("h4", { staticClass: "pt-4" }, [
+                      _c("b", [_vm._v("REGISTRARSE")])
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "form",
+                      {
+                        attrs: { method: "post" },
+                        on: {
+                          submit: function($event) {
+                            $event.preventDefault()
+                            return _vm.createUser($event)
+                          }
+                        }
+                      },
+                      [
+                        _c("div", [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.userRegister.name,
+                                expression: "userRegister.name"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              type: "text",
+                              "aria-required": "true",
+                              name: "contact-form-name",
+                              placeholder: "Nombre",
+                              "aria-invalid": "true",
+                              required: ""
+                            },
+                            domProps: { value: _vm.userRegister.name },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.userRegister,
+                                  "name",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.userRegister.email,
+                                expression: "userRegister.email"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              type: "email",
+                              "aria-required": "true",
+                              name: "contact-form-name",
+                              placeholder: "Email",
+                              "aria-invalid": "true",
+                              required: ""
+                            },
+                            domProps: { value: _vm.userRegister.email },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.userRegister,
+                                  "email",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.userRegister.password,
+                                expression: "userRegister.password"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              type: "password",
+                              "aria-required": "true",
+                              name: "contact-form-email",
+                              placeholder: "Contraseña",
+                              "aria-invalid": "true",
+                              required: ""
+                            },
+                            domProps: { value: _vm.userRegister.password },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.userRegister,
+                                  "password",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "row" }, [
+                          _c("div", { staticClass: "col-md-6 mt-1" }, [
+                            _c(
+                              "button",
+                              {
+                                staticClass: "submit-btn btn-block",
+                                attrs: { type: "submit" }
+                              },
+                              [
+                                !_vm.isLoadingRegister
+                                  ? _c("b", [_vm._v("REGISTRARSE")])
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                _vm.isLoadingRegister
+                                  ? _c("b", [_vm._v("CARGANDO...")])
+                                  : _vm._e()
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col-md-6 mt-1" }, [
+                            _c(
+                              "button",
+                              {
+                                staticClass: "submit-btn btn-block",
+                                attrs: { type: "button" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.register = false
+                                  }
+                                }
+                              },
+                              [
+                                _c("b", [
+                                  _vm._v(
+                                    "¿Ya tienes una cuenta? INICIAR SESIÓN"
+                                  )
+                                ])
+                              ]
+                            )
+                          ])
+                        ])
+                      ]
+                    )
+                  ]
+                )
           ]
         )
       ],
@@ -76660,17 +76639,6 @@ window.moment = moment__WEBPACK_IMPORTED_MODULE_1___default.a;
 Vue.component('app-home', __webpack_require__(/*! ./views/web/home/AppHome.vue */ "./resources/js/views/web/home/AppHome.vue")["default"]);
 Vue.component('nav-bar', __webpack_require__(/*! ./components/Navbar.vue */ "./resources/js/components/Navbar.vue")["default"]);
 Vue.component('footer-bar', __webpack_require__(/*! ./components/Footerbar.vue */ "./resources/js/components/Footerbar.vue")["default"]);
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-
-Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
 Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]);
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
   routes: _routers_index__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -76863,75 +76831,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CommentSection_vue_vue_type_template_id_0d3347b1___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CommentSection_vue_vue_type_template_id_0d3347b1___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/js/components/ExampleComponent.vue":
-/*!******************************************************!*\
-  !*** ./resources/js/components/ExampleComponent.vue ***!
-  \******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ExampleComponent.vue?vue&type=template&id=299e239e& */ "./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&");
-/* harmony import */ var _ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ExampleComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/ExampleComponent.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&":
-/*!*******************************************************************************!*\
-  !*** ./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./ExampleComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&":
-/*!*************************************************************************************!*\
-  !*** ./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e& ***!
-  \*************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./ExampleComponent.vue?vue&type=template&id=299e239e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

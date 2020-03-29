@@ -13,10 +13,10 @@ class DBImportController extends Controller
             $this->insertFiles();
             $this->insertUsers();
             $this->insertCategories();
-            $this->insertPosts();
-            $this->insertComments();
-            $this->insertPostViews();
-            $this->insertPostLikes();
+//            $this->insertPosts();
+//            $this->insertComments();
+//            $this->insertPostViews();
+//            $this->insertPostLikes();
 
             return "Insertado correctamente";
         }catch (\Exception $exception){
@@ -46,8 +46,7 @@ class DBImportController extends Controller
     INSERT INTO categories (id, name, created_at, updated_at) VALUES
 (1, 'TECNOLOGÍA', '2020-03-18 05:00:00', '2020-03-18 05:00:00'),
 (2, 'DESARROLLO', '2020-03-18 05:00:00', '2020-03-18 05:00:00'),
-(3, 'APRENDIZAJE', '2020-03-18 05:00:00', '2020-03-18 05:00:00'),
-(4, 'OTRO', '2020-03-18 05:00:00', '2020-03-18 05:00:00')
+(3, 'APRENDIZAJE', '2020-03-18 05:00:00', '2020-03-18 05:00:00')
     ");
     }
 
@@ -92,7 +91,7 @@ class DBImportController extends Controller
         DB::insert("
     INSERT INTO files (id, name, format, path, type, local, created_at, updated_at) VALUES
 (1, 'AVATAR', 'JPG', '/files-storage/images/avatar-default.jpg', 'IMAGEN', TRUE, '2020-03-18 05:00:00', '2020-03-18 05:00:00'),
-(2, 'VALLE', 'PNG', '/files-storage/images/image_1.jpg', 'IMAGEN', TRUE,'2020-03-18 05:00:00', '2020-03-18 05:00:00')
+(2, 'SMASH', 'PNG', '/files-storage/images/image_1.jpg', 'IMAGEN', TRUE,'2020-03-18 05:00:00', '2020-03-18 05:00:00')
 
     ");
     }

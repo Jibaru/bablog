@@ -3,14 +3,14 @@
     <div class="container pt-5">
 
         <div class="comment-form row">
-            <div class="col-md-6">
-                AQUÍ IRÁ EL LOGO
-            </div>
+            <!--<div class="col-md-6">-->
+                <!--AQUÍ IRÁ EL LOGO-->
+            <!--</div>-->
             <transition name="fade" mode="out-in" appear>
                 <div v-if="!register" 
                     key="login"
-                    class="col-md-6">
-                    <h4 class="pt-5">
+                    class="col-md-8" style="margin: 0 auto">
+                    <h4 class="pt-4">
                         <b>INICIAR SESIÓN</b>
                     </h4>
                     <form method="post" @submit.prevent="loginUser">
@@ -36,6 +36,12 @@
                                 aria-invalid="true" 
                                 required>
                         </div>
+                        <div v-if="errorLogin"
+                             class="alert alert-danger text-center">Ingrese datos correctos
+                        </div>
+                        <div v-if="registerSuccesfully"
+                             class="alert alert-success text-center">Registro correcto. Inicie sesión
+                        </div>
                         <div class="row">
                             <div class="col-md-6 mt-1">
                                 <button class="submit-btn btn-block" type="submit">
@@ -53,11 +59,11 @@
                         </div>
                     </form>
                 </div>
-            
                 <div v-else 
-                    class="col-md-6"
+                    class="col-md-8"
+                    style="margin: 0 auto"
                     key="register">
-                    <h4 class="pt-5">
+                    <h4 class="pt-4">
                         <b>REGISTRARSE</b>
                     </h4>
                     <form method="post" @submit.prevent="createUser">
@@ -136,7 +142,9 @@
                     role: {
                         id: 3
                     }
-                }
+                },
+                errorLogin: false,
+                registerSuccesfully: false
             }
         },
         methods: {
@@ -158,7 +166,9 @@
                     this.isLoadingRegister = false;
 
                     if(response.status === 201){
+                        this.registerSuccesfully = true;
                         this.register = false;
+                        setTimeout(() => this.registerSuccesfully = false, 3000);
                     }
 
                 } catch (e) {
@@ -197,7 +207,10 @@
 
 
                 } catch(e) {
-                    console.log(e);
+                    this.isLoadingLogin = false;
+                    this.errorLogin = true;
+                    this.clearLoginForm();
+                    setTimeout(() => this.errorLogin = false, 3000);
                 }
 
             },
