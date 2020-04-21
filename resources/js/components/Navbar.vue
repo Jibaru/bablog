@@ -115,6 +115,7 @@
                     if(response.status === 200){
                         this.displayUserMenu = false;
                         this.clearUser();
+                        location.reload();
                     }
 
                 }catch(e){
